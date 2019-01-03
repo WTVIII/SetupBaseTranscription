@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/CSS/01/" xmlns:Values="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/CSS/Values/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/CSS/01/" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update>
+						<lml:Description> Added copyright and upldate history.   Corrected Primatives misspelling.</lml:Description>
+						<lml:Date>2002-09-14</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Added Structured Copyright and Update History</lml:Description>
+						<lml:Date>2003-02-18</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Changed name of CSSValues.xsd to Values.xsd and changed namespace prefix values accordingly.</lml:Description>
+						<lml:Date>2003-02-18</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/CSS/Values/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/CSS/Values/01/Values.xsd"/>
+	<xsd:complexType name="Stylesheet">
+		<xsd:sequence maxOccurs="unbounded">
+			<xsd:element ref="Element"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Element">
+		<xsd:sequence>
+			<xsd:element ref="Name"/>
+			<xsd:element ref="Class" minOccurs="0"/>
+			<xsd:element ref="Styles"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Name">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Class">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Styles">
+		<xsd:choice maxOccurs="unbounded">
+			<xsd:group ref="Box"/>
+			<xsd:group ref="Classification"/>
+			<xsd:group ref="ColorandBackground"/>
+			<xsd:group ref="Font"/>
+			<xsd:group ref="Positioning"/>
+			<xsd:group ref="Printing"/>
+			<xsd:group ref="Text"/>
+			<!-- <xsd:group ref="Behaviors"/> -->
+			<!-- <xsd:group ref="Other"/> -->
+			<!-- <xsd:group ref="Behaviors"/> -->
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<!-- <xsd:complexType name="Style">
+		<xsd:sequence>
+			<xsd:element ref="Style" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType> -->
+	<!-- .............................................. -->
+	<!-- Behaviors Complex Types  -->
+	<!-- .............................................. -->
+	<!-- .............................................. -->
+	<!-- Box Complex Types  -->
+	<!-- .............................................. -->
+	<xsd:complexType name="border">
+		<xsd:group ref="Values:BorderGroup"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-bottom">
+		<xsd:group ref="Values:BorderGroup"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-bottom-color">
+		<xsd:sequence>
+			<xsd:element ref="Values:color"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-bottom-style">
+		<xsd:sequence>
+			<xsd:element ref="Values:border-style"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-bottom-width">
+		<xsd:sequence>
+			<xsd:element ref="Values:border-width"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-collapse">
+		<xsd:sequence>
+			<xsd:element ref="Values:border-collapse"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-color">
+		<xsd:sequence>
+			<xsd:element ref="Values:color"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-left">
+		<xsd:group ref="Values:BorderGroup"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-left-color">
+		<xsd:sequence>
+			<xsd:element ref="Values:color"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-left-style">
+		<xsd:sequence>
+			<xsd:element ref="Values:border-style"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-left-width">
+		<xsd:sequence>
+			<xsd:element ref="Values:border-width"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-right">
+		<xsd:group ref="Values:BorderGroup"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-right-color">
+		<xsd:sequence>
+			<xsd:element ref="Values:color"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-right-style">
+		<xsd:sequence>
+			<xsd:element ref="Values:border-style"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-right-width">
+		<xsd:choice>
+			<xsd:sequence>
+				<xsd:group ref="Values:Length"/>
+			</xsd:sequence>
+			<xsd:sequence>
+				<xsd:element ref="Values:border-width"/>
+			</xsd:sequence>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-style">
+		<xsd:sequence>
+			<xsd:element ref="Values:border-style"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-top">
+		<xsd:group ref="Values:BorderGroup"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-top-color">
+		<xsd:sequence>
+			<xsd:element ref="Values:color"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-top-style">
+		<xsd:sequence>
+			<xsd:element ref="Values:border-style"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-top-width">
+		<xsd:sequence>
+			<xsd:element ref="Values:border-width"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="border-width">
+		<xsd:sequence>
+			<xsd:element ref="Values:border-width"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="clear">
+		<xsd:sequence>
+			<xsd:element ref="Values:clear"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="float">
+		<xsd:sequence>
+			<xsd:element ref="Values:float"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="margin">
+		<xsd:group ref="Values:Length"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="margin-bottom">
+		<xsd:group ref="Values:Length"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="margin-left">
+		<xsd:group ref="Values:Length"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="margin-right">
+		<xsd:group ref="Values:Length"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="margin-top">
+		<xsd:group ref="Values:Length"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="padding">
+		<xsd:group ref="Values:Length"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="padding-bottom">
+		<xsd:group ref="Values:Length"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="padding-left">
+		<xsd:group ref="Values:Length"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="padding-right">
+		<xsd:group ref="Values:Length"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="padding-top">
+		<xsd:group ref="Values:Length"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="table-layout"/>
+	<!-- .............................................. -->
+	<!-- Classification Complex Types  -->
+	<!-- .............................................. -->
+	<xsd:complexType name="display">
+		<xsd:sequence>
+			<xsd:element ref="Values:display"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="list-style">
+		<xsd:sequence>
+			<xsd:element ref="Values:list-style-image"/>
+			<xsd:element ref="Values:list-style-position"/>
+			<xsd:element ref="Values:list-style-type"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="list-style-image">
+		<xsd:sequence>
+			<xsd:element ref="Values:list-style-image"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="list-style-position">
+		<xsd:sequence>
+			<xsd:element ref="Values:list-style-position"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="list-style-type">
+		<xsd:sequence>
+			<xsd:element ref="Values:list-style-type"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<!-- .............................................. -->
+	<!-- ColorandBackground Complex Types  -->
+	<!-- .............................................. -->
+	<xsd:complexType name="background"/>
+	<xsd:complexType name="background-attachment">
+		<xsd:sequence>
+			<xsd:element ref="Values:background-attachment"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="background-color">
+		<xsd:sequence>
+			<xsd:element ref="Values:color"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="background-image">
+		<xsd:sequence>
+			<xsd:element ref="Values:background-image"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="background-position">
+		<xsd:sequence>
+			<xsd:element ref="Values:background-position"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="background-repeat">
+		<xsd:sequence>
+			<xsd:element ref="Values:background-repeat"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="color">
+		<xsd:sequence>
+			<xsd:element ref="Values:color"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<!-- .............................................. -->
+	<!-- Font Complex Types  -->
+	<!-- .............................................. -->
+	<xsd:complexType name="font-family">
+		<xsd:sequence>
+			<xsd:element ref="Values:generic-family"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="font-size">
+		<xsd:sequence>
+			<xsd:element ref="Values:font-size"/>
+			<xsd:element ref="Values:units"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="font-style">
+		<xsd:sequence>
+			<xsd:element ref="Values:font-style"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="font-variant">
+		<xsd:sequence>
+			<xsd:element ref="Values:font-variant"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="font-weight">
+		<xsd:sequence>
+			<xsd:element ref="Values:font-weight"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<!-- .............................................. -->
+	<!-- Other Complex Types  -->
+	<!-- .............................................. -->
+	<!-- Not going to use Other
+	<xsd:complexType name="cursor"/>
+	<xsd:complexType name="filter"/> -->
+	<!-- .............................................. -->
+	<!-- Positioning Complex Types  -->
+	<!-- .............................................. -->
+	<xsd:complexType name="height">
+		<xsd:sequence>
+			<xsd:group ref="Values:Length"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="left">
+		<xsd:sequence>
+			<xsd:group ref="Values:Length"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="overflow">
+		<xsd:sequence>
+			<xsd:element ref="Values:overflow"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="overflow-x">
+		<xsd:sequence>
+			<xsd:element ref="Values:overflow"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="overflow-y">
+		<xsd:sequence>
+			<xsd:element ref="Values:overflow"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="position">
+		<xsd:sequence>
+			<xsd:element ref="Values:position"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="right">
+		<xsd:choice>
+			<xsd:group ref="Values:Length"/>
+			<xsd:element ref="Values:auto"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="top">
+		<xsd:choice>
+			<xsd:group ref="Values:Length"/>
+			<xsd:element ref="Values:auto"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="visibility">
+		<xsd:sequence>
+			<xsd:element ref="Values:visibility"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="width">
+		<xsd:choice>
+			<xsd:group ref="Values:Length"/>
+			<xsd:element ref="Values:auto"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="z-index">
+		<xsd:sequence>
+			<xsd:element ref="Values:auto"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<!-- .............................................. -->
+	<!-- Printing Complex Types  -->
+	<!-- .............................................. -->
+	<xsd:complexType name="page-break-after">
+		<xsd:sequence>
+			<xsd:element ref="Values:page-break"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="page-break-before">
+		<xsd:sequence>
+			<xsd:element ref="Values:page-break"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<!-- .............................................. -->
+	<!-- Text Complex Types -->
+	<!-- .............................................. -->
+	<xsd:complexType name="direction">
+		<xsd:sequence>
+			<xsd:element ref="Values:direction"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="ime-mode">
+		<xsd:sequence>
+			<xsd:element ref="Values:ime-mode"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<!-- <xsd:complexType name="layout-grid"/>
+	<xsd:complexType name="layout-grid-char"/>
+	<xsd:complexType name="layout-grid-char-spacing"/>
+	<xsd:complexType name="layout-grid-line"/>
+	<xsd:complexType name="layout-grid-mode"/>
+	<xsd:complexType name="layout-grid-type"/> -->
+	<xsd:complexType name="letter-spacing">
+		<xsd:sequence>
+			<xsd:group ref="Values:Length"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="line-break">
+		<xsd:sequence>
+			<xsd:element ref="Values:line-break"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="line-height">
+		<xsd:sequence>
+			<xsd:group ref="Values:Length"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<!-- <xsd:complexType name="ruby-align"/>
+	<xsd:complexType name="ruby-overhang"/>
+	<xsd:complexType name="ruby-position"/> -->
+	<xsd:complexType name="text-align">
+		<xsd:sequence>
+			<xsd:element ref="Values:text-align"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="text-decoration">
+		<xsd:sequence>
+			<xsd:element ref="Values:text-decoration"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="text-indent">
+		<xsd:sequence>
+			<xsd:group ref="Values:Length"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="text-justify"/>
+	<xsd:complexType name="text-transform">
+		<xsd:sequence>
+			<xsd:element ref="Values:text-transform"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="unicode-bidi">
+		<xsd:sequence>
+			<xsd:element ref="Values:unicode-bidi"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="vertical-align">
+		<xsd:sequence>
+			<xsd:element ref="Values:vertical-align"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="word-break">
+		<xsd:sequence>
+			<xsd:element ref="Values:word-break"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<!-- .............................................. -->
+	<!-- Element Definitions -->
+	<!-- .............................................. -->
+	<xsd:element name="Stylesheet" type="Stylesheet"/>
+	<xsd:element name="Element" type="Element"/>
+	<xsd:element name="Name" type="Name"/>
+	<xsd:element name="Class" type="Class"/>
+	<xsd:element name="Styles" type="Styles"/>
+	<!-- <xsd:element name="Style" type="Style"/> -->
+	<!-- Style Groups -->
+	<!-- We are not going to use behaviors
+	<xsd:group name="Behaviors">
+		<xsd:choice>
+			<xsd:element name="behavior"/>
+			<xsd:element name="clear"/>
+		</xsd:choice>
+	</xsd:group> -->
+	<xsd:group name="Box">
+		<xsd:choice>
+			<xsd:element name="border" type="border"/>
+			<xsd:element name="border-bottom" type="border-bottom"/>
+			<xsd:element name="border-bottom-color" type="border-bottom-color"/>
+			<xsd:element name="border-bottom-style" type="border-bottom-style"/>
+			<xsd:element name="border-bottom-width" type="border-bottom-width"/>
+			<xsd:element name="border-collapse" type="border-collapse"/>
+			<xsd:element name="border-color" type="border-color"/>
+			<xsd:element name="border-left" type="border-left"/>
+			<xsd:element name="border-left-color" type="border-left-color"/>
+			<xsd:element name="border-left-style" type="border-left-style"/>
+			<xsd:element name="border-left-width" type="border-left-width"/>
+			<xsd:element name="border-right" type="border-right"/>
+			<xsd:element name="border-right-color" type="border-right-color"/>
+			<xsd:element name="border-right-style" type="border-right-style"/>
+			<xsd:element name="border-right-width" type="border-right-width"/>
+			<xsd:element name="border-style" type="border-style"/>
+			<xsd:element name="border-top" type="border-top"/>
+			<xsd:element name="border-top-color" type="border-top-color"/>
+			<xsd:element name="border-top-style" type="border-top-style"/>
+			<xsd:element name="border-top-width" type="border-top-width"/>
+			<xsd:element name="border-width" type="border-width"/>
+			<xsd:element name="clear" type="clear"/>
+			<xsd:element name="float" type="float"/>
+			<xsd:element name="margin" type="margin"/>
+			<xsd:element name="margin-bottom" type="margin-bottom"/>
+			<xsd:element name="margin-left" type="margin-left"/>
+			<xsd:element name="margin-right" type="margin-right"/>
+			<xsd:element name="margin-top" type="margin-top"/>
+			<xsd:element name="padding" type="padding"/>
+			<xsd:element name="padding-bottom" type="padding-bottom"/>
+			<xsd:element name="padding-left" type="padding-left"/>
+			<xsd:element name="padding-right" type="padding-right"/>
+			<xsd:element name="padding-top" type="padding-top"/>
+			<xsd:element name="table-layout" type="table-layout"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:group name="Classification">
+		<xsd:choice>
+			<xsd:element name="display" type="display"/>
+			<xsd:element name="list-style" type="list-style"/>
+			<xsd:element name="list-style-image" type="list-style-image"/>
+			<xsd:element name="list-style-position" type="list-style-position"/>
+			<xsd:element name="list-style-type" type="list-style-type"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:group name="ColorandBackground">
+		<xsd:choice>
+			<xsd:element name="background" type="background"/>
+			<xsd:element name="background-attachment" type="background-attachment"/>
+			<xsd:element name="background-color" type="background-color"/>
+			<xsd:element name="background-image" type="background-image"/>
+			<xsd:element name="background-position" type="background-position"/>
+			<xsd:element name="background-repeat" type="background-repeat"/>
+			<xsd:element name="color" type="color"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:group name="Font">
+		<xsd:choice>
+			<xsd:element name="font-family" type="font-family"/>
+			<xsd:element name="font-size" type="font-size"/>
+			<xsd:element name="font-style" type="font-style"/>
+			<xsd:element name="font-variant" type="font-variant"/>
+			<xsd:element name="font-weight" type="font-weight"/>
+		</xsd:choice>
+	</xsd:group>
+	<!-- <xsd:group name="Other">
+		<xsd:choice>
+			<xsd:element name="cursor" type="cursor"/>
+			<xsd:element name="filter" type="filter"/>
+		</xsd:choice>
+	</xsd:group> -->
+	<xsd:group name="Positioning">
+		<xsd:choice>
+			<xsd:element name="height" type="height"/>
+			<xsd:element name="left" type="left"/>
+			<xsd:element name="overflow" type="overflow"/>
+			<xsd:element name="overflow-x" type="overflow"/>
+			<xsd:element name="overflow-y" type="overflow"/>
+			<xsd:element name="position" type="position"/>
+			<xsd:element name="right" type="right"/>
+			<xsd:element name="top" type="top"/>
+			<xsd:element name="visibility" type="visibility"/>
+			<xsd:element name="width" type="width"/>
+			<xsd:element name="z-index" type="z-index"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:group name="Printing">
+		<xsd:choice>
+			<xsd:element name="page-break-after" type="page-break-after"/>
+			<xsd:element name="page-break-before" type="page-break-before"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:group name="Text">
+		<xsd:choice>
+			<xsd:element name="direction" type="direction"/>
+			<xsd:element name="ime-mode" type="ime-mode"/>
+			<xsd:element name="letter-spacing" type="letter-spacing"/>
+			<xsd:element name="line-break" type="line-break"/>
+			<xsd:element name="line-height" type="line-height"/>
+			<xsd:element name="text-align" type="text-align"/>
+			<xsd:element name="text-decoration" type="text-decoration"/>
+			<xsd:element name="text-indent" type="text-indent"/>
+			<xsd:element name="text-transform" type="text-transform"/>
+			<xsd:element name="unicode-bidi" type="unicode-bidi"/>
+			<xsd:element name="vertical-align" type="vertical-align"/>
+			<xsd:element name="word-break" type="word-break"/>
+			<!-- Layout grid does not appear to be used in any of the browsers -->
+			<!-- <xsd:element name="layout-grid" type="layout-grid"/>
+			<xsd:element name="layout-grid-char" type="layout-grid-char"/>
+			<xsd:element name="layout-grid-char-spacing" type="layout-grid-char-spacing"/>
+			<xsd:element name="layout-grid-line" type="layout-grid-line"/>
+			<xsd:element name="layout-grid-mode" type="layout-grid-mode"/>
+			<xsd:element name="layout-grid-type" type="layout-grid-type"/> -->
+			<!-- Ruby does not appear to be used in any browser -->
+			<!-- <xsd:element name="ruby-align" type="ruby-align"/>
+			<xsd:element name="ruby-overhang" type="ruby-overhang"/>
+			<xsd:element name="ruby-position" type="ruby-position"/> -->
+			<!-- <xsd:element name="text-justify" type="text-justify"/> -->
+		</xsd:choice>
+	</xsd:group>
+</xsd:schema>

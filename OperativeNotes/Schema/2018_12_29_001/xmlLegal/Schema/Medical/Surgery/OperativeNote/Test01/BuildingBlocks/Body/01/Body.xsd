@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Body/01/" xmlns:Object="http://www.xmllegal.org/Schema/BuildingBlocks/Object/01/" xmlns:Table="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Table/01/" xmlns:Outline="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Outline/01/" xmlns:Paragraph="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Paragraph/01/" xmlns:Heading="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Heading/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Body/01/" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update>
+						<lml:Description> Added copyright and upldate history.   Corrected Primatives misspelling.</lml:Description>
+						<lml:Date>2002-09-14</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Added Structured Copyright and Update History</lml:Description>
+						<lml:Date>2003-02-18</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:CopiedFrom>http://www.xmllegal.org/Schema/BuildingBlocks/Body/01/</lml:CopiedFrom>
+						<lml:Description>Copied.</lml:Description>
+						<lml:Date>2009-03-28</lml:Date>
+						<lml:Editor>Schema Generator</lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Heading/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Heading/01/Heading.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Paragraph/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Paragraph/01/Paragraph.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Outline/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Outline/01/Outline.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Table/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Table/01/Table.xsd"/>
+	<!-- <xsd:import namespace="http://www.xmllegal.org/Schema/BuildingBlocks/Object/01/" schemaLocation="../../Object/01/Object.xsd"/>   -->
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:complexType name="Body">
+		<xsd:choice maxOccurs="unbounded">
+			<xsd:element ref="Heading:Heading"/>
+			<xsd:element ref="Paragraph:Paragraph"/>
+			<xsd:element ref="Outline:Outline"/>
+			<xsd:element ref="Table:Table"/>
+			<!--<xsd:element ref="Object:Object"/> -->
+			<!-- <xsd:element ref="Heading"/>
+			<xsd:element ref="Paragraph"/>
+			<xsd:element ref="Outline"/>
+			<xsd:element ref="Table"/>
+			<xsd:element ref="Object"/> -->
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<!-- <xsd:sequence> -->
+		<!-- <xsd:sequence>
+				<xsd:element ref="Title" minOccurs="0"/>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element ref="Author" minOccurs="0"/>
+					<xsd:element ref="Date" minOccurs="0"/>
+					<xsd:element ref="Version" minOccurs="0"/>
+				</xsd:choice>
+			</xsd:sequence> -->
+		<!-- </xsd:sequence> -->
+	</xsd:complexType>
+	<xsd:element name="Body" type="Body"/>
+	<!-- <xsd:element name="Heading" type="Heading:Heading"/>
+	<xsd:element name="Paragraph" type="Paragraph:Paragraph"/>
+	<xsd:element name="Outline" type="Outline:Outline"/>
+	<xsd:element name="Table" type="Table:Table"/>
+	<xsd:element name="Object" type="Object:Object"/> -->
+	<!-- <xsd:element name="Title"/>
+	<xsd:element name="Author" type="xsd:string"/>
+	<xsd:element name="Date" type="xsd:string"/>
+	<xsd:element name="Version" type="xsd:string"/> -->
+</xsd:schema>

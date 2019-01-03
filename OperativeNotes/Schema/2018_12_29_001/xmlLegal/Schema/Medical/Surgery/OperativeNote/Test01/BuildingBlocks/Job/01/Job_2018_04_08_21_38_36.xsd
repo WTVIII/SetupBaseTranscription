@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Job/01/" version="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Job/01/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Job/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" xmlns:AudioFiles="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFiles/02/">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact xmlLegal Help (help@xmllegal.org)  or  Winchel "Todd" VincentIII (Todd.Vincent@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update>
+            <lml:Description>Created</lml:Description>
+            <lml:Date>2018-04-08</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Normalized using xmlSchemaGenerator Normalizer 0.1.7.</lml:Description>
+            <lml:Date>2018-04-08</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Normalized using xmlSchemaGenerator Normalizer 0.1.7.</lml:Description>
+            <lml:Date>2018-04-08</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd" />
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFiles/02/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFiles/02/AudioFiles.xsd" />
+  <xsd:complexType name="Job">
+    <xsd:sequence>
+      <xsd:element ref="Number" />
+      <xsd:element ref="DictatorName" />
+      <xsd:element ref="DictatorID" />
+      <xsd:element ref="MedicalRecordNumber" />
+      <xsd:element ref="ServiceDate" />
+      <xsd:element ref="Priority" />
+      <xsd:element ref="AudioFiles" />
+    </xsd:sequence>
+    <xsd:attribute name="First" type="xsd:string" />
+    <xsd:attribute name="Middle" type="xsd:string" />
+    <xsd:attribute name="Last" type="xsd:string" />
+    <xsd:attribute name="Suffix" type="xsd:string" />
+    <xsd:attribute name="PatientID" type="xsd:string" />
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="Number">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:positiveInteger">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="DictatorName">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="DictatorID">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="MedicalRecordNumber">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ServiceDate">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:dateTime">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Priority">
+    <xsd:simpleContent>
+      <xsd:extension base="Priorities">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Priorities">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="0">
+        <xsd:annotation>
+          <xsd:documentation>
+            <lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">Zero (0) means normal priority.</lml:Paragraph>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1">
+        <xsd:annotation>
+          <xsd:documentation>
+            <lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">One (1) means urgent priority.</lml:Paragraph>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="Job" type="Job">
+    <xsd:annotation>
+      <xsd:documentation>
+        <lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">The Job element is the intended root element of the schema.</lml:Paragraph>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Number" type="Number">
+    <xsd:annotation>
+      <xsd:documentation>
+        <lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">Job:Number must match the Operative Notes DocumentID.</lml:Paragraph>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DictatorName" type="DictatorName" />
+  <xsd:element name="DictatorID" type="DictatorID" />
+  <xsd:element name="MedicalRecordNumber" type="MedicalRecordNumber" />
+  <xsd:element name="ServiceDate" type="ServiceDate" />
+  <xsd:element name="Priority" type="Priority" />
+  <xsd:element name="AudioFiles" type="AudioFiles:AudioFiles" />
+</xsd:schema>

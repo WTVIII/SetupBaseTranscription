@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Paragraph/01/" xmlns:Inline="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Inline/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Paragraph/01/" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update>
+            <lml:Description> Added copyright and upldate history. Deleted old Items (previously commented out).</lml:Description>
+            <lml:Date>2002-09-14</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Added Structured Copyright and Update History</lml:Description>
+            <lml:Date>2003-02-18</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Fixed relative paths.  Eliminated unnecessary min and maxOccurs from Paragarph and Text complexTypes.  Eliminated choice as child of Text complexType and as partent of group Inline:Inline to make it consistent with Heading and Outline.</lml:Description>
+            <lml:Date>2003-06-07</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/BuildingBlocks/Paragraph/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2009-03-28</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Inline/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Inline/01/Inline.xsd" />
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/Attributes.xsd" />
+  <xsd:complexType name="Paragraph">
+    <xsd:sequence>
+      <xsd:element ref="BodyNumber" minOccurs="0" />
+      <xsd:element ref="Item" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+    <xsd:attribute name="Level" type="xsd:string" />
+  </xsd:complexType>
+  <xsd:complexType name="BodyNumber">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Item">
+    <xsd:sequence>
+      <xsd:element ref="Number" minOccurs="0" />
+      <xsd:element ref="Indent" minOccurs="0" />
+      <xsd:element ref="Text" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+    <xsd:attribute name="Level" type="xsd:string" />
+  </xsd:complexType>
+  <xsd:complexType name="Number">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+        <xsd:attribute name="Level" type="xsd:string" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Indent">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Text" mixed="true">
+    <xsd:group ref="Inline:Inline" minOccurs="0" maxOccurs="unbounded" />
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:element name="Paragraph" type="Paragraph" />
+  <xsd:element name="BodyNumber" type="BodyNumber" />
+  <xsd:element name="Item" type="Item" />
+  <xsd:element name="Number" type="Number" />
+  <xsd:element name="Indent" type="Indent" />
+  <xsd:element name="Text" type="Text" />
+</xsd:schema>

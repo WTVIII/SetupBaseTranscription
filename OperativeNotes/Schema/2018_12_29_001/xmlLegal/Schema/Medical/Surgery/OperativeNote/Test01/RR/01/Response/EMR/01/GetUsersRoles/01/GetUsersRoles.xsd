@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Response/EMR/01/GetUsersRoles/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Response/EMR/01/GetUsersRoles/01/" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription>
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:complexType name="GetUsersRoles">
+		<xsd:sequence>
+			<xsd:element ref="User" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="User">
+		<xsd:sequence>
+			<xsd:element ref="FirstName"/>
+			<xsd:element ref="LastName"/>
+			<xsd:element ref="MiddleName"/>
+			<xsd:element ref="Designation"/>
+			<xsd:element ref="UserRoles"/>
+			<xsd:element ref="Password"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="FirstName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LastName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MiddleName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Designation">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="UserRoles">
+		<xsd:sequence>
+			<xsd:element ref="Role" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Role">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Password">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:element name="GetUsersRoles" type="GetUsersRoles"/>
+	<xsd:element name="User" type="User"/>
+	<xsd:element name="FirstName" type="FirstName"/>
+	<xsd:element name="LastName" type="LastName"/>
+	<xsd:element name="MiddleName" type="MiddleName"/>
+	<xsd:element name="Designation" type="Designation"/>
+	<xsd:element name="UserRoles" type="UserRoles"/>
+	<xsd:element name="Role" type="Role"/>
+	<xsd:element name="Password" type="Password"/>
+</xsd:schema>

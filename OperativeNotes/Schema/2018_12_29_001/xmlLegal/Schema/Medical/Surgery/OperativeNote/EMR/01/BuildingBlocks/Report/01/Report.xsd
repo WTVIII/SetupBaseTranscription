@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Report/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Attributes/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Report/01/" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Report/01/" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/">
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact xmlLegal Help (help@xmllegal.org)  or  Winchel "Todd" VincentIII (Todd.Vincent@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/">
+						<lml:Description>Created.</lml:Description>
+						<lml:Date>2009-07-15</lml:Date>
+						<lml:Editor>Prabhath Pallati</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:CopiedFrom>http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Response/EMR/01/GetReport/01/</lml:CopiedFrom>
+						<lml:Description>Copied.</lml:Description>
+						<lml:Date>2018-11-27</lml:Date>
+						<lml:Editor>Schema Generator</lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:complexType name="Report">
+		<xsd:sequence>
+			<xsd:element ref="Document" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Document">
+		<xsd:sequence>
+			<xsd:element ref="DocumentID"/>
+			<xsd:element ref="WordCount"/>
+			<xsd:element ref="CreatedDate" minOccurs="0"/>
+			<xsd:element ref="CreatedBy" minOccurs="0"/>
+			<xsd:element ref="UpdatedDate" minOccurs="0"/>
+			<xsd:element ref="UpdatedBy" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentID">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="WordCount">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CreatedDate">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CreatedBy">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="UpdatedDate">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="UpdatedBy">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:element name="Report" type="Report"/>
+	<xsd:element name="Document" type="Document"/>
+	<xsd:element name="DocumentID" type="DocumentID"/>
+	<xsd:element name="WordCount" type="WordCount"/>
+	<xsd:element name="CreatedDate" type="CreatedDate"/>
+	<xsd:element name="CreatedBy" type="CreatedBy"/>
+	<xsd:element name="UpdatedDate" type="UpdatedDate"/>
+	<xsd:element name="UpdatedBy" type="UpdatedBy"/>
+</xsd:schema>

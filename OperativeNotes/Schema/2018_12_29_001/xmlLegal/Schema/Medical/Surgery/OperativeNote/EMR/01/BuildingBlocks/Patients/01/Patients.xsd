@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Patients/01/" version="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Patients/01/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Patients/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" xmlns:Patient="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Patient/01/">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact xmlLegal Help (help@xmllegal.org)  or  Winchel "Todd" VincentIII (Todd.Vincent@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update>
+            <lml:Description>Created.</lml:Description>
+            <lml:Date>2009-07-15</lml:Date>
+            <lml:Editor>Prabhath Pallati</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Updated. Imported Patient namespace and removed all other elements.</lml:Description>
+            <lml:Date>2010-05-21</lml:Date>
+            <lml:Editor>Prabhath Pallati</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Response/EMR/01/GetPatients/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2018-10-20</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>This schema is using a different Attributes.xsd file so it can use schemas also used in the OperativeNote.xsd (may need to change this).</lml:Description>
+            <lml:Date>2018-10-20</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Normalized using xmlSchemaGenerator Normalizer 0.1.7.</lml:Description>
+            <lml:Date>2018-10-20</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/Attributes.xsd" />
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Patient/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Patient/01/Patient.xsd" />
+  <xsd:complexType name="Patients">
+    <xsd:sequence>
+      <xsd:element ref="Patient" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="Patient">
+    <xsd:sequence>
+      <xsd:element ref="Content" />
+      <xsd:element ref="CreatedDate" minOccurs="0" />
+      <xsd:element ref="CreatedBy" minOccurs="0" />
+      <xsd:element ref="UpdatedDate" minOccurs="0" />
+      <xsd:element ref="UpdatedBy" minOccurs="0" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="CreatedDate">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="CreatedBy">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="UpdatedDate">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="UpdatedBy">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:element name="Patients" type="Patients" />
+  <xsd:element name="Patient" type="Patient" />
+  <xsd:element name="CreatedDate" type="CreatedDate" />
+  <xsd:element name="CreatedBy" type="CreatedBy" />
+  <xsd:element name="UpdatedDate" type="UpdatedDate" />
+  <xsd:element name="UpdatedBy" type="UpdatedBy" />
+  <xsd:element name="Content" type="Patient:Patient" />
+</xsd:schema>

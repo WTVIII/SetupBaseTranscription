@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Head/DocumentSummary/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Head/DocumentSummary/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update>
+            <lml:Description> Added copyright and upldate history.   Corrected Primatives misspelling.</lml:Description>
+            <lml:Date>2002-09-14</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Added Structured Copyright and Update History</lml:Description>
+            <lml:Date>2003-02-18</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Deleted vocabulary.</lml:Description>
+            <lml:Date>2004-07-05</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/BuildingBlocks/Head/DocumentSummary/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2009-03-28</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/Attributes.xsd" />
+  <xsd:complexType name="DocumentSummary">
+    <xsd:sequence>
+      <xsd:element ref="Title" minOccurs="0" />
+      <xsd:element ref="DocumentType" minOccurs="0" />
+      <xsd:element ref="Author" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element ref="Typist" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element ref="Subject" minOccurs="0" />
+      <xsd:element ref="Category" minOccurs="0" />
+      <xsd:element ref="Keyword" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element ref="Comments" minOccurs="0" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="Title">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="DocumentType">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Author">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Typist">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Subject">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Category">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Keyword">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Comments">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:element name="DocumentSummary" type="DocumentSummary" />
+  <xsd:element name="Title" type="Title" />
+  <xsd:element name="DocumentType" type="DocumentType" />
+  <xsd:element name="Author" type="Author" />
+  <xsd:element name="Typist" type="Typist" />
+  <xsd:element name="Subject" type="Subject" />
+  <xsd:element name="Category" type="Category" />
+  <xsd:element name="Keyword" type="Keyword" />
+  <xsd:element name="Comments" type="Comments" />
+</xsd:schema>

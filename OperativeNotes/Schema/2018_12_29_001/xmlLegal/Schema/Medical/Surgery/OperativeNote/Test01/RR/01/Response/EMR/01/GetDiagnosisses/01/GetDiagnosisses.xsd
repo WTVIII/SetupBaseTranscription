@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Response/EMR/01/GetDiagnosisses/01/" elementFormDefault="qualified" xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Response/EMR/01/GetDiagnosisses/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription>
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update>
+						<lml:Description>Created.</lml:Description>
+						<lml:Date>2009-07-15</lml:Date>
+						<lml:Editor>Prabhath Pallati</lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:complexType name="GetDiagnosisses">
+		<xsd:sequence>
+			<xsd:element ref="Diagnosis" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Diagnosis">
+		<xsd:sequence>
+			<xsd:element ref="DiagnosisName"/>
+			<xsd:element ref="CreateDate" minOccurs="0"/>
+			<xsd:element ref="CreateUser" minOccurs="0"/>
+			<xsd:element ref="UpdateDate" minOccurs="0"/>
+			<xsd:element ref="UpdateUser" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DiagnosisName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CreateDate">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CreateUser">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateDate">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateUser">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:element name="GetDiagnosisses" type="GetDiagnosisses" />
+	<xsd:element name="Diagnosis" type="Diagnosis" />
+	<xsd:element name="DiagnosisName" type="DiagnosisName" />
+	<xsd:element name="CreateDate" type="CreateDate" />
+	<xsd:element name="CreateUser" type="CreateUser" />
+	<xsd:element name="UpdateDate" type="UpdateDate" />
+	<xsd:element name="UpdateUser" type="UpdateUser" />
+</xsd:schema>

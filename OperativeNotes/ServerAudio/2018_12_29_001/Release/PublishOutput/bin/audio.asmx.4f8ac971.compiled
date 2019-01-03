@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Service/Medical/Surgery/OperativeNote/Test01/Audio/RR/01/Request/Audio/01/Audio.asmx" hash="ffffffff82b78076" filehash="190daa12cb63" flags="130000" assembly="ServerAudio001" type="wAudio">
+  <filedeps>
+    <filedep name="/Service/Medical/Surgery/OperativeNote/Test01/Audio/RR/01/Request/Audio/01/Audio.asmx" />
+  </filedeps>
+</preserve>

@@ -1,0 +1,45 @@
+<Project:Project xmlns:Attributes="http://www.xmllegal.org/Schema/xmlLegal/Programs/xmlCodeGenerator/BuildingBlocks/Attributes/01/" xmlns:Code="http://www.xmllegal.org/Schema/xmlLegal/Programs/xmlCodeGenerator/Project/Test02/Code/01/" xmlns:Database="http://www.xmllegal.org/Schema/xmlLegal/Programs/xmlCodeGenerator/Project/Test02/Database/01/" xmlns:Documentation="http://www.xmllegal.org/Schema/xmlLegal/Programs/xmlCodeGenerator/Project/Test02/Documentation/01/" xmlns:Dotfuscator="http://www.xmllegal.org/Schema/xmlLegal/Programs/xmlCodeGenerator/Project/Test02/Dotfuscator/01/" xmlns:ForeignSchema="http://www.xmllegal.org/Schema/xmlLegal/Programs/xmlCodeGenerator/Project/Test02/ForeignSchema/01/" xmlns:Upload="http://www.xmllegal.org/Schema/xmlLegal/Programs/xmlCodeGenerator/Project/Test02/Upload/01/" xmlns:Project="http://www.xmllegal.org/Schema/xmlLegal/Programs/xmlCodeGenerator/Project/Test02/">
+  <Project:SchemaPath>C:\xmlLegal\Schema\Medical\Surgery\OperativeNote\EMR\01\RR\01\Response\Response.xsd</Project:SchemaPath>
+  <Project:DomainName>http://www.xmllegal.org/</Project:DomainName>
+  <Project:GeneratedCodeFolderPath>C:\xmlLegal\Code\Medical\Surgery\OperativeNote\EMR\01\RR\01\Response</Project:GeneratedCodeFolderPath>
+  <Project:OutputXMLPath>C:\xmlDocuments</Project:OutputXMLPath>
+  <Project:LocalCodeRepository>C:\xmlLegal\Code\Medical\Surgery\OperativeNote\EMR\01\RR\01\Response</Project:LocalCodeRepository>
+  <Project:Code>
+    <Code:CodeType>
+      <Code:VB6 Open="false">false</Code:VB6>
+      <Code:VBNet20 Open="false">false</Code:VBNet20>
+      <Code:Csharp20 Open="False">false</Code:Csharp20>
+      <Code:Java Obfuscate="false" Open="False">false</Code:Java>
+    </Code:CodeType>
+    <Code:Options>CodeOnly</Code:Options>
+    <Code:Settings>
+      <Code:LM>false</Code:LM>
+      <Code:TestProject>true</Code:TestProject>
+      <Code:ClassInfoXML>false</Code:ClassInfoXML>
+      <Code:MinimalMappingXML>false</Code:MinimalMappingXML>
+      <Code:DeleteSource>false</Code:DeleteSource>
+      <Code:MinimalXML>false</Code:MinimalXML>
+      <Code:BaseClass>false</Code:BaseClass>
+      <Code:AddSchema>false</Code:AddSchema>
+      <Code:JDKPath>C:\Program Files\Java\jdk1.6</Code:JDKPath>
+      <Code:SuffixName Use="True">xResponseEMR0011</Code:SuffixName>
+    </Code:Settings>
+    <Code:Version>011</Code:Version>
+  </Project:Code>
+  <Project:Dotfuscator>
+    <Dotfuscator:DotfuscatorPath />
+    <Dotfuscator:DashOPath />
+  </Project:Dotfuscator>
+  <Project:Documentation>
+    <Documentation:Create>false</Documentation:Create>
+  </Project:Documentation>
+  <Project:Database>
+    <Database:Create>false</Database:Create>
+  </Project:Database>
+  <Project:ForeignSchema>
+    <ForeignSchema:Use>false</ForeignSchema:Use>
+  </Project:ForeignSchema>
+  <Project:Upload>
+    <Upload:Release>false</Upload:Release>
+  </Project:Upload>
+</Project:Project>

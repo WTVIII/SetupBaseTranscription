@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Head/Stylesheet/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:CSS="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/CSS/01/" xmlns:CSSValues="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/CSS/Values/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Head/Stylesheet/01/" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact xmlLegal Help (help@xmllegal.org)  or  Winchel "Todd" VincentIII (Todd.Vincent@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update>
+						<lml:Description>Added Structured SchemaDescription,Copyright, and Update History</lml:Description>
+						<lml:Date>2009-03-28</lml:Date>
+						<lml:Editor>Schema Generator</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:CopiedFrom>http://www.xmllegal.org/Schema/BuildingBlocks/Head/Stylesheet/01/</lml:CopiedFrom>
+						<lml:Description>Copied.</lml:Description>
+						<lml:Date>2009-03-28</lml:Date>
+						<lml:Editor>Schema Generator</lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+</xsd:schema>

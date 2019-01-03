@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Documents/01/" version="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Documents/01/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Documents/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Attributes/01/">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact xmlLegal Help (help@xmllegal.org)  or  Winchel "Todd" VincentIII (Todd.Vincent@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update>
+            <lml:Description>Created.</lml:Description>
+            <lml:Date>2009-07-15</lml:Date>
+            <lml:Editor>Prabhath Pallati</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Added MedicalRecordNumber, Procedure, Extension elements. Renamed DocumentProcedures element to Procedures.</lml:Description>
+            <lml:Date>2012-04-12</lml:Date>
+            <lml:Editor>Prabhath Pallati</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Response/EMR/01/GetDocuments/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2018-10-20</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Normalized using xmlSchemaGenerator Normalizer 0.1.7.</lml:Description>
+            <lml:Date>2018-11-24</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Attributes/01/Attributes.xsd" />
+  <xsd:complexType name="Documents">
+    <xsd:sequence>
+      <xsd:element ref="Document" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="Document">
+    <xsd:sequence>
+      <xsd:element ref="DocumentID" />
+      <xsd:element ref="DocumentTitle" />
+      <xsd:element ref="DocumentType" />
+      <xsd:element ref="DocumentCategory" />
+      <xsd:element ref="MedicalRecordNumber" />
+      <xsd:element ref="PatientID" />
+      <xsd:element ref="PatientName" />
+      <xsd:element ref="Procedure" />
+      <xsd:element ref="Procedures" />
+      <xsd:element ref="Extension" />
+      <xsd:element ref="HasAudio" />
+      <xsd:element ref="Transcription" />
+      <xsd:element ref="Signature" />
+      <xsd:element ref="CreatedOn" />
+      <xsd:element ref="TranscribedOn" />
+      <xsd:element ref="TranscribedBy" />
+      <xsd:element ref="SignedOn" />
+      <xsd:element ref="SignedBy" />
+      <xsd:element ref="CreatedDate" minOccurs="0" />
+      <xsd:element ref="CreatedBy" minOccurs="0" />
+      <xsd:element ref="UpdatedDate" minOccurs="0" />
+      <xsd:element ref="UpdatedBy" minOccurs="0" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="DocumentID">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="DocumentTitle">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="DocumentType">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="DocumentCategory">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="MedicalRecordNumber">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="PatientID">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="PatientName">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Procedure">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Procedures">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Extension">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="HasAudio">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:boolean">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Transcription">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:boolean">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Signature">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:boolean">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="CreatedOn">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="TranscribedOn">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="TranscribedBy">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="SignedOn">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="SignedBy">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="CreatedDate">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="CreatedBy">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="UpdatedDate">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="UpdatedBy">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:element name="Documents" type="Documents" />
+  <xsd:element name="Document" type="Document" />
+  <xsd:element name="DocumentID" type="DocumentID" />
+  <xsd:element name="DocumentTitle" type="DocumentTitle" />
+  <xsd:element name="DocumentType" type="DocumentType" />
+  <xsd:element name="DocumentCategory" type="DocumentCategory" />
+  <xsd:element name="MedicalRecordNumber" type="MedicalRecordNumber" />
+  <xsd:element name="PatientID" type="PatientID" />
+  <xsd:element name="PatientName" type="PatientName" />
+  <xsd:element name="Procedure" type="Procedure" />
+  <xsd:element name="Procedures" type="Procedures" />
+  <xsd:element name="Extension" type="Extension" />
+  <xsd:element name="HasAudio" type="HasAudio" />
+  <xsd:element name="Transcription" type="Transcription" />
+  <xsd:element name="Signature" type="Signature" />
+  <xsd:element name="CreatedOn" type="CreatedOn" />
+  <xsd:element name="TranscribedOn" type="TranscribedOn" />
+  <xsd:element name="TranscribedBy" type="TranscribedBy" />
+  <xsd:element name="SignedOn" type="SignedOn" />
+  <xsd:element name="SignedBy" type="SignedBy" />
+  <xsd:element name="CreatedDate" type="CreatedDate" />
+  <xsd:element name="CreatedBy" type="CreatedBy" />
+  <xsd:element name="UpdatedDate" type="UpdatedDate" />
+  <xsd:element name="UpdatedBy" type="UpdatedBy" />
+</xsd:schema>

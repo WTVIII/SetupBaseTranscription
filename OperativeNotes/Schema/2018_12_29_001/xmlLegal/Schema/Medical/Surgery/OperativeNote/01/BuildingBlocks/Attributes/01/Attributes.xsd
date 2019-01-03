@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update>
+            <lml:Description> Added copyright and upldate history.   Corrected Primatives misspelling.</lml:Description>
+            <lml:Date>2002-09-14</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Added Structured Copyright and Update History</lml:Description>
+            <lml:Date>2003-02-18</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Added Dummy complexType for normalization.</lml:Description>
+            <lml:Date>2003-02-19</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/BuildingBlocks/Attributes/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2009-03-28</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/Attributes/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2009-03-28</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:complexType name="Attributes" />
+  <!-- ............................................ -->
+  <!-- ......... Global Attribute ...... -->
+  <!-- ............................................ -->
+  <xsd:attributeGroup name="Global">
+    <xsd:attribute name="ID" type="xsd:ID" />
+    <xsd:attribute name="Class" type="xsd:string" />
+    <xsd:attribute name="Alias" type="xsd:string" />
+    <xsd:attribute name="Key" type="xsd:string" />
+    <xsd:attribute name="KeyCase" type="KeyCases" />
+    <xsd:attribute name="Type" type="xsd:string" />
+    <xsd:attribute name="Subtype" type="xsd:string" />
+    <xsd:attribute name="href" type="xsd:string" />
+    <!-- <xsd:attribute name="Reference" type="xsd:IDREF"/> -->
+    <!-- <xsd:attribute name="Event" type="xsd:string"/> -->
+    <!-- <xsd:attribute name="Blank">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Yes"/>
+					<xsd:enumeration value="No"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="ContentEditable">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Yes"/>
+					<xsd:enumeration value="No"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute> -->
+  </xsd:attributeGroup>
+  <xsd:attributeGroup name="Position">
+    <xsd:attribute name="BackwardReference" type="xsd:IDREF" />
+    <xsd:attribute name="ForwardReference" type="xsd:IDREF" />
+    <xsd:attribute name="Number" type="xsd:string" />
+    <xsd:attribute name="Position" type="xsd:string" />
+  </xsd:attributeGroup>
+  <xsd:attributeGroup name="Attribution">
+    <xsd:attribute name="Time" type="xsd:string" />
+    <xsd:attribute name="Date" type="xsd:string" />
+    <xsd:attribute name="Author" type="xsd:string" />
+    <xsd:attribute name="Color" type="xsd:string" />
+    <xsd:attribute name="Category" type="xsd:string" />
+    <xsd:attribute name="Subcategory" type="xsd:string" />
+    <xsd:attribute name="Meaning" type="xsd:string" />
+  </xsd:attributeGroup>
+  <xsd:simpleType name="KeyCases">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Title" />
+      <xsd:enumeration value="Lower" />
+      <xsd:enumeration value="Upper" />
+      <xsd:enumeration value="Mixed" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <!-- ............................................ -->
+  <!-- ......... Table Attributes  ....... -->
+  <!-- ............................................ -->
+  <xsd:attributeGroup name="Table">
+    <xsd:attribute name="TableColumns" type="xsd:string" />
+    <xsd:attribute name="TableRows" type="xsd:string" />
+    <xsd:attribute name="BorderThickness" type="xsd:string" />
+    <xsd:attribute name="CellPadding" type="xsd:string" />
+    <xsd:attribute name="CellSpacing" type="xsd:string" />
+    <xsd:attribute name="BackgroundColor" type="xsd:string" />
+    <xsd:attribute name="BackgroundStyle" type="xsd:string" />
+    <xsd:attribute name="BorderColor" type="xsd:string" />
+    <xsd:attribute name="BorderColorBottom" type="xsd:string" />
+    <xsd:attribute name="BorderColorLeft" type="xsd:string" />
+    <xsd:attribute name="BorderColorRight" type="xsd:string" />
+    <xsd:attribute name="BorderColorTop" type="xsd:string" />
+    <xsd:attribute name="BorderStyle" type="xsd:string" />
+    <xsd:attribute name="Height" type="xsd:string" />
+    <xsd:attribute name="HeightMeasurement" type="xsd:string" />
+    <xsd:attribute name="Width" type="xsd:string" />
+    <xsd:attribute name="WidthMeasurement" type="xsd:string" />
+    <xsd:attribute name="HorizontalSpace" type="xsd:string" />
+    <xsd:attribute name="TextAlignmentHorizontal">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Right" />
+          <xsd:enumeration value="Left" />
+          <xsd:enumeration value="Center" />
+          <xsd:enumeration value="Justify" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+    <xsd:attribute name="TextAlignmentVertical">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Top" />
+          <xsd:enumeration value="Middle" />
+          <xsd:enumeration value="Bottom" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+    <xsd:attribute name="TextDirection">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Vertical" />
+          <xsd:enumeration value="Horizontal" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+    <!-- TableColumns and TableRows should not apply to TableCell and Table Row -->
+  </xsd:attributeGroup>
+</xsd:schema>

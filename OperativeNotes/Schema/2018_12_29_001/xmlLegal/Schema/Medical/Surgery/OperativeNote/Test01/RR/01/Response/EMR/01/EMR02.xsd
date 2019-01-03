@@ -1,0 +1,2054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Response/EMR/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" xmlns:Query="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Query/01/" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Response/EMR/01/" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update>
+						<lml:Description>First Update</lml:Description>
+						<lml:Date>2002-12-23</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Second Update</lml:Description>
+						<lml:Date>2003-02-18</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Third Update - compatible with CMS-API/RR version 0.1.8.</lml:Description>
+						<lml:Date>2003-03-03</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Fourth Update - compatible with CMS-API/RR version 0.2.4.</lml:Description>
+						<lml:Date>2003-07-07</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Fifth Update - compatible with CMS-API/RR version 0.2.6.</lml:Description>
+						<lml:Date>2004-05-05</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Query/01/" schemaLocation="../../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Query/01/Query.xsd"/>
+	<xsd:complexType name="EMR">
+		<xsd:choice>
+			<xsd:element ref="AddProcedure"/>
+			<xsd:element ref="UpdateProcedure"/>
+			<xsd:element ref="DeleteProcedure"/>
+			<xsd:element ref="GetProcedure"/>
+			<xsd:element ref="GetProcedures"/>
+			<xsd:element ref="AddDiagnosis"/>
+			<xsd:element ref="UpdateDiagnosis"/>
+			<xsd:element ref="DeleteDiagnosis"/>
+			<xsd:element ref="GetDiagnosis"/>
+			<xsd:element ref="GetDiagnoses"/>
+			<xsd:element ref="AddAssignProcedureToDiagnosis"/>
+			<xsd:element ref="DeleteAssignProcedureToDiagnosis"/>
+			<xsd:element ref="GetAssignProceduresToDiagnoses"/>
+			<xsd:element ref="AddDocumentType"/>
+			<xsd:element ref="UpdateDocumentType"/>
+			<xsd:element ref="DeleteDocumentType"/>
+			<xsd:element ref="GetDocumentType"/>
+			<xsd:element ref="GetDocumentTypes"/>
+			<xsd:element ref="AddTemplate"/>
+			<xsd:element ref="UpdateTemplate"/>
+			<xsd:element ref="DeleteTemplate"/>
+			<xsd:element ref="GetTemplate"/>
+			<xsd:element ref="GetTemplates"/>
+			<xsd:element ref="AddClause"/>
+			<xsd:element ref="UpdateClause"/>
+			<xsd:element ref="DeleteClause"/>
+			<xsd:element ref="GetClause"/>
+			<xsd:element ref="GetClauses"/>
+			<xsd:element ref="AddPatient"/>
+			<xsd:element ref="UpdatePatient"/>
+			<xsd:element ref="DeletePatient"/>
+			<xsd:element ref="GetPatient"/>
+			<xsd:element ref="GetPatients"/>
+			<xsd:element ref="AddGroup"/>
+			<xsd:element ref="UpdateGroup"/>
+			<xsd:element ref="DeleteGroup"/>
+			<xsd:element ref="GetGroup"/>
+			<xsd:element ref="GetGroups"/>
+			<xsd:element ref="AddDocument"/>
+			<xsd:element ref="UpdateDocument"/>
+			<xsd:element ref="DeleteDocument"/>
+			<xsd:element ref="GetDocument"/>
+			<xsd:element ref="GetDocuments"/>
+			<xsd:element ref="AddUser"/>
+			<xsd:element ref="UpdateUser"/>
+			<xsd:element ref="DeleteUser"/>
+			<xsd:element ref="GetUser"/>
+			<xsd:element ref="GetUsers"/>
+			<xsd:element ref="GetUsersRoles"/>
+			<xsd:element ref="GetReport"/>
+			<xsd:element ref="GetTranscribedDocumentsCount"/>
+			<xsd:element ref="GetPendingTranscribeDocumentsCount"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="AddProcedure">
+		<xsd:sequence>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateProcedure">
+		<xsd:sequence>
+			<xsd:element ref="NewProcedure"/>
+			<xsd:element ref="CPT"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DeleteProcedure">
+		<xsd:sequence>
+			<xsd:element ref="Procedure"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetProcedure">
+		<xsd:sequence>
+			<xsd:element ref="Procedure"/>
+			<xsd:element ref="CPT"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetProcedures">
+		<xsd:sequence>
+			<xsd:element ref="Procedures"/>
+			<xsd:element ref="ProceduresNamespace"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+			<xsd:element ref="Query" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="AddDiagnosis">
+		<xsd:sequence>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateDiagnosis">
+		<xsd:sequence>
+			<xsd:element ref="NewDiagnosis"/>
+			<xsd:element ref="ICD"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DeleteDiagnosis">
+		<xsd:sequence>
+			<xsd:element ref="Diagnosis"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetDiagnosis">
+		<xsd:sequence>
+			<xsd:element ref="Diagnosis"/>
+			<xsd:element ref="ICD"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetDiagnoses">
+		<xsd:sequence>
+			<xsd:element ref="Diagnoses"/>
+			<xsd:element ref="DiagnosesNamespace"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+			<xsd:element ref="Query" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="AddAssignProcedureToDiagnosis">
+		<xsd:sequence>
+			<xsd:element ref="Procedure"/>
+			<xsd:element ref="Diagnosis"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DeleteAssignProcedureToDiagnosis">
+		<xsd:sequence>
+			<xsd:element ref="Procedure"/>
+			<xsd:element ref="Diagnosis"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetAssignProceduresToDiagnoses">
+		<xsd:sequence>
+			<xsd:element ref="ProceduresAndDiagnoses"/>
+			<xsd:element ref="ProceduresAndDiagnosesNamespace"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+			<xsd:element ref="Query" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="AddDocumentType">
+		<xsd:sequence>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateDocumentType">
+		<xsd:sequence>
+			<xsd:element ref="NewDocumentType"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DeleteDocumentType">
+		<xsd:sequence>
+			<xsd:element ref="DocumentType"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetDocumentType">
+		<xsd:sequence>
+			<xsd:element ref="DocumentType"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetDocumentTypes">
+		<xsd:sequence>
+			<xsd:element ref="DocumentTypes"/>
+			<xsd:element ref="DocumentTypesNamespace"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+			<xsd:element ref="Query" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="AddTemplate">
+		<xsd:sequence>
+			<xsd:element ref="Name"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateTemplate">
+		<xsd:sequence>
+			<xsd:element ref="NewName"/>
+			<xsd:element ref="NewProcedure"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DeleteTemplate">
+		<xsd:sequence>
+			<xsd:element ref="Name"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetTemplate">
+		<xsd:sequence>
+			<xsd:element ref="Name"/>
+			<xsd:element ref="Procedure"/>
+			<xsd:element ref="Template"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetTemplates">
+		<xsd:sequence>
+			<xsd:element ref="Templates"/>
+			<xsd:element ref="TemplatesNamespace"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+			<xsd:element ref="Query" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="AddClause">
+		<xsd:sequence>
+			<xsd:element ref="Name"/>
+			<xsd:element ref="Procedure"/>
+			<xsd:element ref="Category"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateClause">
+		<xsd:sequence>
+			<xsd:element ref="NewName"/>
+			<xsd:element ref="NewProcedure"/>
+			<xsd:element ref="Category"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DeleteClause">
+		<xsd:sequence>
+			<xsd:element ref="Name"/>
+			<xsd:element ref="Procedure"/>
+			<xsd:element ref="Category"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetClause">
+		<xsd:sequence>
+			<xsd:element ref="Name"/>
+			<xsd:element ref="Procedure"/>
+			<xsd:element ref="Category"/>
+			<xsd:element ref="Clause"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetClauses">
+		<xsd:sequence>
+			<xsd:element ref="Clauses"/>
+			<xsd:element ref="ClausesNamespace"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+			<xsd:element ref="Query" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="AddPatient">
+		<xsd:sequence>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="UpdatePatient">
+		<xsd:sequence>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DeletePatient">
+		<xsd:sequence>
+			<xsd:element ref="PatientID"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetPatient">
+		<xsd:sequence>
+			<xsd:element ref="PatientID"/>
+			<xsd:element ref="Patient"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+			<xsd:element ref="Query" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetPatients">
+		<xsd:sequence>
+			<xsd:element ref="Patients"/>
+			<xsd:element ref="PatientsNamespace"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+			<xsd:element ref="Query" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="AddGroup">
+		<xsd:sequence>
+			<xsd:element ref="Group"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateGroup">
+		<xsd:sequence>
+			<xsd:element ref="NewGroup"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DeleteGroup">
+		<xsd:sequence>
+			<xsd:element ref="Group"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetGroup">
+		<xsd:sequence>
+			<xsd:element ref="Group"/>
+			<xsd:element ref="Role"/>
+			<xsd:element ref="GroupUsers" minOccurs="0"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetGroups">
+		<xsd:sequence>
+			<xsd:element ref="Groups"/>
+			<xsd:element ref="GroupsNamespace"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+			<xsd:element ref="Query" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="AddDocument">
+		<xsd:sequence>
+			<xsd:element ref="DocumentID"/>
+			<xsd:element ref="DocumentTitle"/>
+			<xsd:element ref="DocumentType"/>
+			<xsd:element ref="DocumentCategory"/>
+			<xsd:element ref="PatientName"/>
+			<xsd:element ref="DocumentProcedures"/>
+			<xsd:element ref="Transcription"/>
+			<xsd:element ref="Signature"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateDocument">
+		<xsd:sequence>
+			<xsd:element ref="DocumentTitle"/>
+			<xsd:element ref="DocumentType"/>
+			<xsd:element ref="DocumentCategory"/>
+			<xsd:element ref="PatientName"/>
+			<xsd:element ref="DocumentProcedures"/>
+			<xsd:element ref="Transcription"/>
+			<xsd:element ref="Signature"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DeleteDocument">
+		<xsd:sequence>
+			<xsd:element ref="DocumentID"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetDocument">
+		<xsd:sequence>
+			<xsd:element ref="DocumentTitle"/>
+			<xsd:element ref="DocumentType"/>
+			<xsd:element ref="DocumentCategory"/>
+			<xsd:element ref="PatientName"/>
+			<xsd:element ref="DocumentProcedures"/>
+			<xsd:element ref="Document"/>
+			<xsd:element ref="Transcription"/>
+			<xsd:element ref="Signature"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetDocuments">
+		<xsd:sequence>
+			<xsd:element ref="Documents"/>
+			<xsd:element ref="DocumentsNamespace"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+			<xsd:element ref="Query" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="AddUser">
+		<xsd:sequence>
+			<xsd:element ref="FirstName"/>
+			<xsd:element ref="LastName"/>
+			<xsd:element ref="MiddleName"/>
+			<xsd:element ref="Salutation"/>
+			<xsd:element ref="Suffix"/>
+			<xsd:element ref="Designation"/>
+			<xsd:element ref="UserGroups" minOccurs="0"/>
+			<xsd:element ref="LoginName"/>
+			<xsd:element ref="DisplayName"/>
+			<xsd:element ref="Identifier"/>
+			<xsd:element ref="MRA"/>
+			<xsd:element ref="Password"/>
+			<xsd:element ref="Active"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateUser">
+		<xsd:sequence>
+			<xsd:element ref="NewFirstName"/>
+			<xsd:element ref="NewLastName"/>
+			<xsd:element ref="MiddleName"/>
+			<xsd:element ref="Salutation"/>
+			<xsd:element ref="Suffix"/>
+			<xsd:element ref="Designation"/>
+			<xsd:element ref="UserGroups" minOccurs="0"/>
+			<xsd:element ref="LoginName"/>
+			<xsd:element ref="DisplayName"/>
+			<xsd:element ref="Identifier"/>
+			<xsd:element ref="MRA"/>
+			<xsd:element ref="Password"/>
+			<xsd:element ref="Active"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DeleteUser">
+		<xsd:sequence>
+			<xsd:element ref="FirstName"/>
+			<xsd:element ref="LastName"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetUser">
+		<xsd:sequence>
+			<xsd:element ref="FirstName"/>
+			<xsd:element ref="LastName"/>
+			<xsd:element ref="MiddleName"/>
+			<xsd:element ref="Salutation"/>
+			<xsd:element ref="Suffix"/>
+			<xsd:element ref="Designation"/>
+			<xsd:element ref="UserGroups" minOccurs="0"/>
+			<xsd:element ref="LoginName"/>
+			<xsd:element ref="DisplayName"/>
+			<xsd:element ref="Identifier"/>
+			<xsd:element ref="MRA"/>
+			<xsd:element ref="Password"/>
+			<xsd:element ref="Active"/>
+			<xsd:element ref="CreatedDate"/>
+			<xsd:element ref="CreatedBy"/>
+			<xsd:element ref="UpdatedDate"/>
+			<xsd:element ref="UpdatedBy"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetUsers">
+		<xsd:sequence>
+			<xsd:element ref="Users"/>
+			<xsd:element ref="UsersNamespace"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+			<xsd:element ref="Query" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetUsersRoles">
+		<xsd:sequence>
+			<xsd:element ref="UsersRoles"/>
+			<xsd:element ref="UsersRolesNamespace"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+			<xsd:element ref="Query" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetReport">
+		<xsd:sequence>
+			<xsd:element ref="FromDate"/>
+			<xsd:element ref="ToDate"/>
+			<xsd:element ref="UserName"/>
+			<xsd:element ref="Documents"/>
+			<xsd:element ref="DocumentsNamespace"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+			<xsd:element ref="Query" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetTranscribedDocumentsCount">
+		<xsd:sequence>
+			<xsd:element ref="UserName"/>
+			<xsd:element ref="DocumentsCount"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GetPendingTranscribeDocumentsCount">
+		<xsd:sequence>
+			<xsd:element ref="DocumentsCount"/>
+			<xsd:element ref="RunMode"/>
+			<xsd:element ref="ErrorStatus"/>
+			<xsd:element ref="ErrorMessage"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="CreatedDate">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CreatedBy">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="RunMode">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ErrorStatus">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ErrorMessage">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="NewProcedure">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CPT">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="UpdatedDate">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="UpdatedBy">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Procedure">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Procedures">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="ProceduresNamespace">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="NewDiagnosis">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ICD">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Diagnosis">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Diagnoses">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DiagnosesNamespace">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ProceduresAndDiagnoses">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="ProceduresAndDiagnosesNamespace">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="NewDocumentType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentTypes">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentTypesNamespace">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Name">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="NewName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Template">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Templates">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="TemplatesNamespace">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Category">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Clause">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Clauses">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="ClausesNamespace">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PatientID">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Patient">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Patients">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="PatientsNamespace">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Group">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="NewGroup">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Role">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="GroupUsers">
+		<xsd:sequence>
+			<xsd:element ref="User" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Groups">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="GroupsNamespace">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentID">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentTitle">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentCategory">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PatientName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentProcedures">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Transcription">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Signature">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Document">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Documents">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentsNamespace">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="User">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="FirstName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LastName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MiddleName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Salutation">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Suffix">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Designation">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="UserGroups">
+		<xsd:sequence>
+			<xsd:element ref="Group" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="LoginName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DisplayName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Identifier">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MRA">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Password">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Active">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="NewFirstName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="NewLastName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="FromDate">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ToDate">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="UserName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentsCount">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Users">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="UsersRoles">
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="skip"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="UsersNamespace">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="UsersRolesNamespace">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:element name="EMR" type="EMR"/>
+	<xsd:element name="AddProcedure" type="AddProcedure">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UpdateProcedure" type="UpdateProcedure">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeleteProcedure" type="DeleteProcedure">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetProcedure" type="GetProcedure">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetProcedures" type="GetProcedures">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AddDiagnosis" type="AddDiagnosis">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UpdateDiagnosis" type="UpdateDiagnosis">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeleteDiagnosis" type="DeleteDiagnosis">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetDiagnosis" type="GetDiagnosis">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetDiagnoses" type="GetDiagnoses">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AddAssignProcedureToDiagnosis" type="AddAssignProcedureToDiagnosis">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeleteAssignProcedureToDiagnosis" type="DeleteAssignProcedureToDiagnosis">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetAssignProceduresToDiagnoses" type="GetAssignProceduresToDiagnoses">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AddDocumentType" type="AddDocumentType">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UpdateDocumentType" type="UpdateDocumentType">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeleteDocumentType" type="DeleteDocumentType">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetDocumentType" type="GetDocumentType">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetDocumentTypes" type="GetDocumentTypes">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AddTemplate" type="AddTemplate">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UpdateTemplate" type="UpdateTemplate">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeleteTemplate" type="DeleteTemplate">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetTemplate" type="GetTemplate">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetTemplates" type="GetTemplates">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AddClause" type="AddClause">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UpdateClause" type="UpdateClause">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeleteClause" type="DeleteClause">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetClause" type="GetClause">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetClauses" type="GetClauses">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AddPatient" type="AddPatient">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UpdatePatient" type="UpdatePatient">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeletePatient" type="DeletePatient">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetPatient" type="GetPatient">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetPatients" type="GetPatients">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AddGroup" type="AddGroup">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UpdateGroup" type="UpdateGroup">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeleteGroup" type="DeleteGroup">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetGroup" type="GetGroup">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetGroups" type="GetGroups">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AddDocument" type="AddDocument">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UpdateDocument" type="UpdateDocument">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeleteDocument" type="DeleteDocument">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetDocument" type="GetDocument">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetDocuments" type="GetDocuments">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AddUser" type="AddUser">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UpdateUser" type="UpdateUser">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeleteUser" type="DeleteUser">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetUser" type="GetUser">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetUsers" type="GetUsers">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetUsersRoles" type="GetUsersRoles">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetReport" type="GetReport">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetTranscribedDocumentsCount" type="GetTranscribedDocumentsCount">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GetPendingTranscribeDocumentsCount" type="GetPendingTranscribeDocumentsCount">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CreatedDate" type="CreatedDate">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CreatedBy" type="CreatedBy">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RunMode" type="RunMode">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ErrorStatus" type="ErrorStatus">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ErrorMessage" type="ErrorMessage">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NewProcedure" type="NewProcedure">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CPT" type="CPT">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UpdatedDate" type="UpdatedDate">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UpdatedBy" type="UpdatedBy">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Procedure" type="Procedure">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Procedures" type="Procedures">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ProceduresNamespace" type="ProceduresNamespace">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NewDiagnosis" type="NewDiagnosis">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ICD" type="ICD">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Diagnosis" type="Diagnosis">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Diagnoses" type="Diagnoses">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DiagnosesNamespace" type="DiagnosesNamespace">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ProceduresAndDiagnoses" type="ProceduresAndDiagnoses">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ProceduresAndDiagnosesNamespace" type="ProceduresAndDiagnosesNamespace">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NewDocumentType" type="NewDocumentType">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DocumentType" type="DocumentType">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DocumentTypes" type="DocumentTypes">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DocumentTypesNamespace" type="DocumentTypesNamespace">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Name" type="Name">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NewName" type="NewName">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Template" type="Template">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Templates" type="Templates">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TemplatesNamespace" type="TemplatesNamespace">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Category" type="Category">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Clause" type="Clause">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Clauses" type="Clauses">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ClausesNamespace" type="ClausesNamespace">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PatientID" type="PatientID">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Patient" type="Patient">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Patients" type="Patients">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PatientsNamespace" type="PatientsNamespace">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Group" type="Group">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NewGroup" type="NewGroup">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Role" type="Role">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GroupUsers" type="GroupUsers">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Groups" type="Groups">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GroupsNamespace" type="GroupsNamespace">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DocumentID" type="DocumentID">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DocumentTitle" type="DocumentTitle">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DocumentCategory" type="DocumentCategory">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PatientName" type="PatientName">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DocumentProcedures" type="DocumentProcedures">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Transcription" type="Transcription">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Signature" type="Signature">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Document" type="Document">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Documents" type="Documents">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DocumentsNamespace" type="DocumentsNamespace">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="User" type="User">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FirstName" type="FirstName">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LastName" type="LastName">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MiddleName" type="MiddleName">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Salutation" type="Salutation">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Suffix" type="Suffix">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Designation" type="Designation">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UserGroups" type="UserGroups">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LoginName" type="LoginName">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DisplayName" type="DisplayName">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Identifier" type="Identifier">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MRA" type="MRA">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Password" type="Password">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Active" type="Active">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NewFirstName" type="NewFirstName">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NewLastName" type="NewLastName">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Users" type="Users">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UsersNamespace" type="UsersNamespace">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UsersRoles" type="UsersRoles">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UsersRolesNamespace" type="UsersRolesNamespace">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FromDate" type="FromDate">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ToDate" type="ToDate">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UserName" type="UserName">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DocumentsCount" type="DocumentsCount">
+		<xsd:annotation>
+			<xsd:documentation>
+				<lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/"/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Query" type="Query:Query"/>
+</xsd:schema>

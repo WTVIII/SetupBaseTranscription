@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Patient/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" xmlns:Person="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Person/01/" xmlns:Visit="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Visit/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Patient/01/" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/">
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact xmlLegal Help (help@xmllegal.org)  or  Winchel "Todd" VincentIII (Todd.Vincent@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/">
+            <lml:Description>Created.</lml:Description>
+            <lml:Date>2010-05-20</lml:Date>
+            <lml:Editor>Prabhath Pallati</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Patient/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2018-10-20</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/Attributes.xsd" />
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Person/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Person/01/Person.xsd" />
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Visit/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Visit/01/Visit.xsd" />
+  <xsd:complexType name="Patient">
+    <xsd:sequence>
+      <xsd:element ref="PatientID" />
+      <xsd:element ref="MRN" />
+      <xsd:element ref="MSW" minOccurs="0" />
+      <xsd:element ref="Person" />
+      <xsd:element ref="WithWhom" minOccurs="0" />
+      <xsd:element ref="ResponsibleParty" minOccurs="0" />
+      <xsd:element ref="Visits" minOccurs="0" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="PatientID">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="MRN">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="MSW">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="WithWhom">
+    <xsd:sequence>
+      <xsd:element ref="PersonName" minOccurs="0" />
+      <xsd:element ref="Phone" minOccurs="0" />
+      <xsd:element ref="NeedToCall" minOccurs="0" />
+      <xsd:element ref="WillBeHere" minOccurs="0" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="PersonName">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Phone">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="NeedToCall">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:boolean">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="WillBeHere">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:boolean">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Visits">
+    <xsd:sequence>
+      <xsd:element ref="Visit" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:element name="Patient" type="Patient" />
+  <xsd:element name="PatientID" type="PatientID" />
+  <xsd:element name="MRN" type="MRN" />
+  <xsd:element name="MSW" type="MSW" />
+  <xsd:element name="Person" type="Person:Person" />
+  <xsd:element name="WithWhom" type="WithWhom" />
+  <xsd:element name="PersonName" type="PersonName" />
+  <xsd:element name="Phone" type="Phone" />
+  <xsd:element name="NeedToCall" type="NeedToCall" />
+  <xsd:element name="WillBeHere" type="WillBeHere" />
+  <xsd:element name="ResponsibleParty" type="Person:Person" />
+  <xsd:element name="Visits" type="Visits" />
+  <xsd:element name="Visit" type="Visit:Visit" />
+</xsd:schema>

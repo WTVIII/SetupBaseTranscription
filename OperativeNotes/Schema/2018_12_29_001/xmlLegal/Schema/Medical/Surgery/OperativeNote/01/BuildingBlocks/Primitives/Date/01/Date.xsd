@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Primitives/Date/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Primitives/Date/01/" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update>
+            <lml:Description> Added copyright and upldate history.  Removed attributes Month, Day, and Year.  Used schema on the website as it is the most recent.  Corrected Primitives misspelling.</lml:Description>
+            <lml:Date>2002-09-14</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Added Structured Copyright and Update History</lml:Description>
+            <lml:Date>2003-02-18</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Changed relative path for Attributes to add 'Schema'.</lml:Description>
+            <lml:Date>2003-02-23</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/BuildingBlocks/Primitives/Date/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2009-03-28</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/Attributes.xsd" />
+  <xsd:complexType name="Date" mixed="true">
+    <xsd:all>
+      <xsd:element ref="DayName" minOccurs="0" />
+      <xsd:element ref="Month" minOccurs="0" />
+      <xsd:element ref="Day" minOccurs="0" />
+      <xsd:element ref="Year" minOccurs="0" />
+    </xsd:all>
+    <xsd:attributeGroup ref="Attributes:Global" />
+    <xsd:attribute name="Date" type="xsd:date" />
+  </xsd:complexType>
+  <xsd:complexType name="DayName">
+    <xsd:simpleContent>
+      <xsd:extension base="DayNames">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="DayNames">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Monday" />
+      <xsd:enumeration value="Tuesday" />
+      <xsd:enumeration value="Wednesday" />
+      <xsd:enumeration value="Thursday" />
+      <xsd:enumeration value="Friday" />
+      <xsd:enumeration value="Saturday" />
+      <xsd:enumeration value="Sunday" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Month">
+    <xsd:simpleContent>
+      <xsd:extension base="Months">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Months">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="January" />
+      <xsd:enumeration value="February" />
+      <xsd:enumeration value="March" />
+      <xsd:enumeration value="April" />
+      <xsd:enumeration value="May" />
+      <xsd:enumeration value="June" />
+      <xsd:enumeration value="July" />
+      <xsd:enumeration value="August" />
+      <xsd:enumeration value="September" />
+      <xsd:enumeration value="October" />
+      <xsd:enumeration value="November" />
+      <xsd:enumeration value="December" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Day">
+    <xsd:simpleContent>
+      <xsd:extension base="Days">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Days">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="1" />
+      <xsd:enumeration value="2" />
+      <xsd:enumeration value="3" />
+      <xsd:enumeration value="4" />
+      <xsd:enumeration value="5" />
+      <xsd:enumeration value="6" />
+      <xsd:enumeration value="7" />
+      <xsd:enumeration value="8" />
+      <xsd:enumeration value="9" />
+      <xsd:enumeration value="10" />
+      <xsd:enumeration value="11" />
+      <xsd:enumeration value="12" />
+      <xsd:enumeration value="13" />
+      <xsd:enumeration value="14" />
+      <xsd:enumeration value="15" />
+      <xsd:enumeration value="16" />
+      <xsd:enumeration value="17" />
+      <xsd:enumeration value="18" />
+      <xsd:enumeration value="19" />
+      <xsd:enumeration value="20" />
+      <xsd:enumeration value="21" />
+      <xsd:enumeration value="22" />
+      <xsd:enumeration value="23" />
+      <xsd:enumeration value="24" />
+      <xsd:enumeration value="25" />
+      <xsd:enumeration value="26" />
+      <xsd:enumeration value="27" />
+      <xsd:enumeration value="28" />
+      <xsd:enumeration value="29" />
+      <xsd:enumeration value="30" />
+      <xsd:enumeration value="31" />
+      <xsd:enumeration value="1st" />
+      <xsd:enumeration value="2nd" />
+      <xsd:enumeration value="3rd" />
+      <xsd:enumeration value="4th" />
+      <xsd:enumeration value="5th" />
+      <xsd:enumeration value="6th" />
+      <xsd:enumeration value="7th" />
+      <xsd:enumeration value="8th" />
+      <xsd:enumeration value="9th" />
+      <xsd:enumeration value="10th" />
+      <xsd:enumeration value="11th" />
+      <xsd:enumeration value="12th" />
+      <xsd:enumeration value="13th" />
+      <xsd:enumeration value="14th" />
+      <xsd:enumeration value="15th" />
+      <xsd:enumeration value="16th" />
+      <xsd:enumeration value="17th" />
+      <xsd:enumeration value="18th" />
+      <xsd:enumeration value="19th" />
+      <xsd:enumeration value="20th" />
+      <xsd:enumeration value="21st" />
+      <xsd:enumeration value="22nd" />
+      <xsd:enumeration value="23rd" />
+      <xsd:enumeration value="24th" />
+      <xsd:enumeration value="25th" />
+      <xsd:enumeration value="26th" />
+      <xsd:enumeration value="27th" />
+      <xsd:enumeration value="28th" />
+      <xsd:enumeration value="29th" />
+      <xsd:enumeration value="30th" />
+      <xsd:enumeration value="31st" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Year">
+    <xsd:simpleContent>
+      <xsd:extension base="Years">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Years">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="4" />
+      <xsd:minLength value="0" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="Date" type="Date" />
+  <xsd:element name="DayName" type="DayName" />
+  <xsd:element name="Month" type="Month" />
+  <xsd:element name="Day" type="Day" />
+  <xsd:element name="Year" type="Year" />
+  <xsd:group name="Vocabulary">
+    <xsd:choice>
+      <xsd:element ref="Date" />
+      <xsd:element ref="DayName" />
+      <xsd:element ref="Month" />
+      <xsd:element ref="Day" />
+      <xsd:element ref="Year" />
+    </xsd:choice>
+  </xsd:group>
+</xsd:schema>

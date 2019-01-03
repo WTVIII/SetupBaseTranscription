@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Query/01/Seed/01/" version="01" xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/" elementFormDefault="qualified" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Query/01/Seed/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact xmlLegal Help (help@xmllegal.org)  or  Winchel "Todd" Vincent III (Todd.Vincent@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update>
+						<lml:Description>Normalized using xmlLegal Normalizer 0.1.1. Deleted Annotations and Update History. Copied to Zip File.</lml:Description>
+						<lml:Date>2006-06-29</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:complexType name="Seed">
+		<xsd:choice>
+			<xsd:element ref="Exact"/>
+			<xsd:element ref="BeginsWith"/>
+			<xsd:element ref="Contains"/>
+			<xsd:element ref="DateRange"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Exact">
+		<xsd:sequence>
+			<xsd:element ref="Name"/>
+			<xsd:element ref="Value"/>
+		</xsd:sequence>
+		<xsd:attribute name="Conjunction" type="xsd:string"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="BeginsWith">
+		<xsd:sequence>
+			<xsd:element ref="Name"/>
+			<xsd:element ref="Value"/>
+		</xsd:sequence>
+		<xsd:attribute name="Conjunction" use="required" type="Conjunctions"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Contains">
+		<xsd:sequence>
+			<xsd:element ref="Name"/>
+			<xsd:element ref="Value"/>
+		</xsd:sequence>
+		<xsd:attribute name="Conjunction" use="required" type="Conjunctions"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DateRange">
+		<xsd:sequence>
+			<xsd:element ref="Name"/>
+			<xsd:element ref="BeginDate"/>
+			<xsd:element ref="EndDate" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="Conjunction" use="required" type="Conjunctions"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Name">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Value">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="BeginDate">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="EndDate">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="Conjunctions">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="And"/>
+			<xsd:enumeration value="Or"/>
+			<xsd:enumeration value="And Not"/>
+			<xsd:enumeration value="Or Not"/>
+			<xsd:enumeration value="Stop"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="Seed" type="Seed"/>
+	<xsd:element name="Exact" type="Exact"/>
+	<xsd:element name="BeginsWith" type="BeginsWith"/>
+	<xsd:element name="Contains" type="Contains"/>
+	<xsd:element name="DateRange" type="DateRange"/>
+	<xsd:element name="Name" type="Name"/>
+	<xsd:element name="Value" type="Value"/>
+	<xsd:element name="BeginDate" type="BeginDate"/>
+	<xsd:element name="EndDate" type="EndDate"/>
+</xsd:schema>

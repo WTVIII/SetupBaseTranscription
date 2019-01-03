@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Phone/01/" xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Phone/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update>
+            <lml:Description> Added copyright and upldate history.   Corrected Primatives misspelling.</lml:Description>
+            <lml:Date>2002-09-14</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Added Structured Copyright and Update History</lml:Description>
+            <lml:Date>2003-02-18</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Changed relative path for Attributes to add 'Schema'.</lml:Description>
+            <lml:Date>2003-02-23</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Changed CountryCode length from three to four characters.</lml:Description>
+            <lml:Date>2003-05-11</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Normalized using xmlLegal Normalizer 0.0.7</lml:Description>
+            <lml:Date>2003-05-11</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Temporarily changed CountryCode, AreaCode, Number, and Extension to unlimited characters to fit Document Policy XML.</lml:Description>
+            <lml:Date>2003-05-11</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/BuildingBlocks/Primitives/Phone/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2009-03-28</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd" />
+  <xsd:complexType name="Phone">
+    <xsd:sequence>
+      <xsd:element ref="CountryCode" minOccurs="0" />
+      <xsd:element ref="AreaCode" minOccurs="0" />
+      <xsd:element ref="Number" minOccurs="0" />
+      <xsd:element ref="Extension" minOccurs="0" />
+    </xsd:sequence>
+    <xsd:attribute name="PhoneType" type="PhoneTypes" />
+    <xsd:attribute name="Status" type="Statuses" />
+    <xsd:attribute name="StatusDate" type="xsd:date" />
+    <xsd:attribute name="Relationship" type="Relationships" />
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="CountryCode">
+    <xsd:simpleContent>
+      <xsd:extension base="CountryCodes">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="AreaCode">
+    <xsd:simpleContent>
+      <xsd:extension base="AreaCodes">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Number">
+    <xsd:simpleContent>
+      <xsd:extension base="Numbers">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Extension">
+    <xsd:simpleContent>
+      <xsd:extension base="Extensions">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="CountryCodes">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="0" />
+      <xsd:maxLength value="4" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="AreaCodes">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="0" />
+      <xsd:maxLength value="6" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Numbers">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="0" />
+      <xsd:maxLength value="9" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Extensions">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="0" />
+      <xsd:maxLength value="5" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="PhoneTypes">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="" />
+      <xsd:enumeration value="Home" />
+      <xsd:enumeration value="Work" />
+      <xsd:enumeration value="Fax" />
+      <xsd:enumeration value="Mobile" />
+      <xsd:enumeration value="Other" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Statuses">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="" />
+      <xsd:enumeration value="Current" />
+      <xsd:enumeration value="Past" />
+      <xsd:enumeration value="Future" />
+      <xsd:enumeration value="Other" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Relationships">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="" />
+      <xsd:enumeration value="Personal" />
+      <xsd:enumeration value="Contact Person" />
+      <xsd:enumeration value="Employee" />
+      <xsd:enumeration value="Employer" />
+      <xsd:enumeration value="Husband" />
+      <xsd:enumeration value="Wife" />
+      <xsd:enumeration value="Spouse" />
+      <xsd:enumeration value="Partner" />
+      <xsd:enumeration value="Son" />
+      <xsd:enumeration value="Daughter" />
+      <xsd:enumeration value="Father" />
+      <xsd:enumeration value="Stepfather" />
+      <xsd:enumeration value="Mother" />
+      <xsd:enumeration value="Stepmother" />
+      <xsd:enumeration value="Parent" />
+      <xsd:enumeration value="Grandfather" />
+      <xsd:enumeration value="Grandmother" />
+      <xsd:enumeration value="Grandparent" />
+      <xsd:enumeration value="Aunt" />
+      <xsd:enumeration value="Uncle" />
+      <xsd:enumeration value="Inlaw" />
+      <xsd:enumeration value="Neighbor" />
+      <xsd:enumeration value="Other" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="Phone" type="Phone">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CountryCode" type="CountryCode">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AreaCode" type="AreaCode">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Number" type="Number">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Extension" type="Extension">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/" version="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription>
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact xmlLegal Help (help@xmllegal.org)  or  Winchel "Todd" VincentIII (Todd.Vincent@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update>
+            <lml:Description>Created.</lml:Description>
+            <lml:Date>2010-05-20</lml:Date>
+            <lml:Editor>Prabhath Pallati</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Visit/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2018-02-14</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Normalized using xmlSchemaGenerator Normalizer 0.1.7.</lml:Description>
+            <lml:Date>2018-02-14</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFiles/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2018-02-14</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2018-04-08</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Normalized using xmlSchemaGenerator Normalizer 0.1.7.</lml:Description>
+            <lml:Date>2018-04-08</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd" />
+  <xsd:complexType name="AudioFile">
+    <xsd:sequence>
+      <xsd:element ref="DocumentID" />
+      <xsd:element ref="ID" />
+      <xsd:element ref="Path" />
+      <xsd:element ref="DictationDate" />
+      <xsd:element ref="DictationTime" />
+      <xsd:element ref="Size" />
+      <xsd:element ref="Duration" />
+      <xsd:element ref="File" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="DocumentID">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ID">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Path">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="DictationDate">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:date">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="DictationTime">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:time">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Size">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:positiveInteger">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Duration">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:positiveInteger">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="File">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:element name="AudioFile" type="AudioFile" />
+  <xsd:element name="DocumentID" type="DocumentID" />
+  <xsd:element name="ID" type="ID" />
+  <xsd:element name="Path" type="Path" />
+  <xsd:element name="DictationDate" type="DictationDate">
+    <xsd:annotation>
+      <xsd:documentation>
+        <lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">DictationDate is the date stamp on the audio file.</lml:Paragraph>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DictationTime" type="DictationTime">
+    <xsd:annotation>
+      <xsd:documentation>
+        <lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">DictationTime is the time stamp on the audio file.</lml:Paragraph>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Size" type="Size">
+    <xsd:annotation>
+      <xsd:documentation>
+        <lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">Size is measured in bytes.</lml:Paragraph>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Duration" type="Duration">
+    <xsd:annotation>
+      <xsd:documentation>
+        <lml:Paragraph xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">Duration is measured in seconds.</lml:Paragraph>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="File" type="File" />
+</xsd:schema>

@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/CSS/Values/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/CSS/Values/01/" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update>
+						<lml:Description> Added copyright and upldate history.   Corrected Primatives misspelling.</lml:Description>
+						<lml:Date>2002-09-14</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Added Structured Copyright and Update History</lml:Description>
+						<lml:Date>2003-02-18</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<!-- .............................................. -->
+	<!-- Style Values Element Values-->
+	<!-- .............................................. -->
+	<!-- <xsd:element name="absolute-size" type="absolute-size"/> -->
+	<xsd:element name="absolute-size">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="absolute-size">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="auto">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="auto">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="background-color">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="color">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="background-image">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="image">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="background-repeat">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="repeat">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="background-attachment">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="background-attachment">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="background-position">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="background-position">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="border-style">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="border-style">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="border-width">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="border-width">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="border-collapse">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="border-collapse">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="clear">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="clear">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="color">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="color">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="direction">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="direction">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="display">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="display">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="float">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="float">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="font-size">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="font-size">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="font-style">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="font-style">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="font-variant">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="font-variant">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="font-weight">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="font-weight">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="generic-family">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="generic-family">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="line-break">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="line-break">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="list-style-type">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="list-style-type">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="list-style-position">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="list-style-position">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="list-style-image">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="image">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ime-mode">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="ime-mode">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="overflow">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="overflow">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="page-break">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="page-break">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="position">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="position">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="relative-size">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="relative-size">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="table-layout">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="table-layout">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="text-align">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="align">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="text-decoration">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="text-decoration">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="text-transform">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="text-transform">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="unicode-bidi">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="unicode-bidi">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="units">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="units">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="units-values">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="units-values">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="visibility">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="visibility">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="vertical-align">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="vertical-align">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="word-break">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="word-break">
+					<xsd:attributeGroup ref="Attributes:Global"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- 
+	<xsd:element name="absolute-size" type="absolute-size"/>
+	<xsd:element name="auto" type="auto"/>
+	<xsd:element name="background-color" type="color"/>
+	<xsd:element name="background-image" type="image"/>
+	<xsd:element name="background-repeat" type="repeat"/>
+	<xsd:element name="background-attachment" type="background-attachment"/>
+	<xsd:element name="background-position" type="background-position"/>
+	<xsd:element name="border-style" type="border-style"/>
+	<xsd:element name="border-width" type="border-width"/>
+	<xsd:element name="border-collapse" type="border-collapse"/>
+	<xsd:element name="clear" type="clear"/>
+	<xsd:element name="color" type="color"/>
+	<xsd:element name="direction" type="direction"/>
+	<xsd:element name="display" type="display"/>
+	<xsd:element name="float" type="float"/>
+	<xsd:element name="font-size" type="font-size"/>
+	<xsd:element name="font-style" type="font-style"/>
+	<xsd:element name="font-variant" type="font-variant"/>
+	<xsd:element name="font-weight" type="font-weight"/>
+	<xsd:element name="generic-family" type="generic-family"/>
+	<xsd:element name="line-break" type="line-break"/>
+	<xsd:element name="list-style-type" type="list-style-type"/>
+	<xsd:element name="list-style-position" type="list-style-position"/>
+	<xsd:element name="list-style-image" type="image"/>
+	<xsd:element name="ime-mode" type="ime-mode"/>
+	<xsd:element name="overflow" type="overflow"/>
+	<xsd:element name="page-break" type="page-break"/>
+	<xsd:element name="position" type="position"/>
+	<xsd:element name="relative-size" type="relative-size"/>
+	<xsd:element name="table-layout" type="table-layout"/>
+	<xsd:element name="text-align" type="align"/>
+	<xsd:element name="text-decoration" type="text-decoration"/>
+	<xsd:element name="text-transform" type="text-transform"/>
+	<xsd:element name="unicode-bidi" type="unicode-bidi"/>
+	<xsd:element name="units" type="units"/>
+	<xsd:element name="units-values" type="units-values"/>
+	<xsd:element name="visibility" type="visibility"/>
+	<xsd:element name="vertical-align" type="vertical-align"/>
+	<xsd:element name="word-break" type="word-break"/> -->
+	<!-- .............................................. -->
+	<!-- Style Complex Type (for convenience) -->
+	<!-- .............................................. -->
+	<xsd:complexType name="Styles">
+		<xsd:sequence>
+			<xsd:element ref="generic-family"/>
+			<xsd:element ref="units"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<!-- .............................................. -->
+	<!-- Style Values Complex Types -->
+	<!-- .............................................. -->
+	<xsd:simpleType name="absolute-size">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="xx-small"/>
+			<xsd:enumeration value="x-small"/>
+			<xsd:enumeration value="small"/>
+			<xsd:enumeration value="medium"/>
+			<xsd:enumeration value="large"/>
+			<xsd:enumeration value="x-large"/>
+			<xsd:enumeration value="xx-large"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="align">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="left"/>
+			<xsd:enumeration value="right"/>
+			<xsd:enumeration value="center"/>
+			<xsd:enumeration value="justify"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="auto">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="auto"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="background-attachment">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="scroll"/>
+			<xsd:enumeration value="fixed"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="background-position">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="top"/>
+			<xsd:enumeration value="center"/>
+			<xsd:enumeration value="bottom"/>
+			<xsd:enumeration value="left"/>
+			<xsd:enumeration value="right"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="border-style">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="none"/>
+			<xsd:enumeration value="solid"/>
+			<xsd:enumeration value="double"/>
+			<xsd:enumeration value="groove"/>
+			<xsd:enumeration value="ridge"/>
+			<xsd:enumeration value="inset"/>
+			<xsd:enumeration value="outset"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="border-width">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="thin"/>
+			<xsd:enumeration value="medium"/>
+			<xsd:enumeration value="thick"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="border-collapse">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="separate"/>
+			<xsd:enumeration value="collapse"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="clear">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="none"/>
+			<xsd:enumeration value="left"/>
+			<xsd:enumeration value="right"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="color">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="transparent"/>
+			<xsd:enumeration value="Aqua"/>
+			<xsd:enumeration value="Black"/>
+			<xsd:enumeration value="Blue"/>
+			<xsd:enumeration value="Fuchsia"/>
+			<xsd:enumeration value="Gray"/>
+			<xsd:enumeration value="Green"/>
+			<xsd:enumeration value="Lime"/>
+			<xsd:enumeration value="Maroon"/>
+			<xsd:enumeration value="Navy"/>
+			<xsd:enumeration value="Olive"/>
+			<xsd:enumeration value="Purple"/>
+			<xsd:enumeration value="Red"/>
+			<xsd:enumeration value="Silver"/>
+			<xsd:enumeration value="Teal"/>
+			<xsd:enumeration value="White"/>
+			<xsd:enumeration value="Yellow"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="direction">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ltr"/>
+			<xsd:enumeration value="rtl"/>
+			<xsd:enumeration value="inherit"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="display">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="none"/>
+			<xsd:enumeration value="block"/>
+			<xsd:enumeration value="inline-block"/>
+			<xsd:enumeration value="inline"/>
+			<xsd:enumeration value="table-header-group"/>
+			<xsd:enumeration value="table-footer-group"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="float">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="none"/>
+			<xsd:enumeration value="left"/>
+			<xsd:enumeration value="right"/>
+			<xsd:enumeration value="both"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="font-size">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="8"/>
+			<xsd:enumeration value="9"/>
+			<xsd:enumeration value="10"/>
+			<xsd:enumeration value="11"/>
+			<xsd:enumeration value="12"/>
+			<xsd:enumeration value="14"/>
+			<xsd:enumeration value="16"/>
+			<xsd:enumeration value="18"/>
+			<xsd:enumeration value="20"/>
+			<xsd:enumeration value="22"/>
+			<xsd:enumeration value="24"/>
+			<xsd:enumeration value="26"/>
+			<xsd:enumeration value="28"/>
+			<xsd:enumeration value="36"/>
+			<xsd:enumeration value="48"/>
+			<xsd:enumeration value="72"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="font-style">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="normal"/>
+			<xsd:enumeration value="italic"/>
+			<xsd:enumeration value="oblique"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="font-variant">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="normal"/>
+			<xsd:enumeration value="small-caps"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="font-weight">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="normal"/>
+			<xsd:enumeration value="bolder"/>
+			<xsd:enumeration value="bold"/>
+			<xsd:enumeration value="lighter"/>
+			<xsd:enumeration value="100"/>
+			<xsd:enumeration value="200"/>
+			<xsd:enumeration value="300"/>
+			<xsd:enumeration value="400"/>
+			<xsd:enumeration value="500"/>
+			<xsd:enumeration value="600"/>
+			<xsd:enumeration value="700"/>
+			<xsd:enumeration value="800"/>
+			<xsd:enumeration value="900"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="generic-family">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="serif"/>
+			<xsd:enumeration value="sans-serif"/>
+			<xsd:enumeration value="cursive"/>
+			<xsd:enumeration value="fantasy"/>
+			<xsd:enumeration value="monospace"/>
+			<xsd:enumeration value="Arial, Helvetica, sans-serif"/>
+			<xsd:enumeration value="'Courier New', Courier, monospace"/>
+			<xsd:enumeration value="'MS Serif', 'New York', serif"/>
+			<xsd:enumeration value="'MS Sans Serif', Geneva, sans-serif"/>
+			<xsd:enumeration value="'Times New Roman', Times, serif"/>
+			<xsd:enumeration value="Verdana, Geneva, Arial, Helvetica, sans-serif"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ime-mode">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="auto"/>
+			<xsd:enumeration value="active"/>
+			<xsd:enumeration value="inactive"/>
+			<xsd:enumeration value="disabled"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="line-break">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="strict"/>
+			<xsd:enumeration value="normal"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="list-style-type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="disc"/>
+			<xsd:enumeration value="circle"/>
+			<xsd:enumeration value="square"/>
+			<xsd:enumeration value="decimal"/>
+			<xsd:enumeration value="lower-roman"/>
+			<xsd:enumeration value="upper-roman"/>
+			<xsd:enumeration value="lower-alpha"/>
+			<xsd:enumeration value="upper-alpha"/>
+			<xsd:enumeration value="none"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="list-style-position">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="inside"/>
+			<xsd:enumeration value="outside"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="image">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="none"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="overflow">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="visible"/>
+			<xsd:enumeration value="hidden"/>
+			<xsd:enumeration value="scroll"/>
+			<xsd:enumeration value="auto"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="page-break">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="auto"/>
+			<xsd:enumeration value="always"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="position">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="absolute"/>
+			<xsd:enumeration value="relative"/>
+			<xsd:enumeration value="static"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="relative-size">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="larger"/>
+			<xsd:enumeration value="smaller"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="repeat">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="repeat-x"/>
+			<xsd:enumeration value="repeat-y"/>
+			<xsd:enumeration value="no-repeat"/>
+			<xsd:enumeration value="repeat"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="table-layout">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="auto"/>
+			<xsd:enumeration value="fixed"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="text-decoration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="none"/>
+			<xsd:enumeration value="overline"/>
+			<xsd:enumeration value="underline"/>
+			<xsd:enumeration value="line-through"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="text-transform">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="capitalize"/>
+			<xsd:enumeration value="uppercase"/>
+			<xsd:enumeration value="lowercase"/>
+			<xsd:enumeration value="none"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="unicode-bidi">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="normal"/>
+			<xsd:enumeration value="embed"/>
+			<xsd:enumeration value="bidi-override"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="units">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="pt"/>
+			<xsd:enumeration value="in"/>
+			<xsd:enumeration value="pc"/>
+			<xsd:enumeration value="mm"/>
+			<xsd:enumeration value="cm"/>
+			<xsd:enumeration value="px"/>
+			<xsd:enumeration value="em"/>
+			<xsd:enumeration value="ex"/>
+			<xsd:enumeration value="%"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="units-values">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="-10.00"/>
+			<xsd:maxInclusive value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="vertical-align">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="baseline"/>
+			<xsd:enumeration value="sub"/>
+			<xsd:enumeration value="super"/>
+			<xsd:enumeration value="top"/>
+			<xsd:enumeration value="middle"/>
+			<xsd:enumeration value="bottom"/>
+			<xsd:enumeration value="text-top"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="visibility">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="visible"/>
+			<xsd:enumeration value="hidden"/>
+			<xsd:enumeration value="inherit"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="word-break">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="normal"/>
+			<xsd:enumeration value="break-all"/>
+			<xsd:enumeration value="keep-all"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- .............................................. -->
+	<!-- Style Value Groups -->
+	<!-- .............................................. -->
+	<xsd:group name="BorderGroup">
+		<xsd:choice>
+			<xsd:element ref="border-style"/>
+			<xsd:element ref="border-width"/>
+			<xsd:element ref="color"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:group name="Length">
+		<xsd:sequence>
+			<xsd:element ref="units-values"/>
+			<xsd:element ref="units"/>
+		</xsd:sequence>
+	</xsd:group>
+</xsd:schema>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/AddressDetails/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Attributes/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/AddressDetails/01/" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/">
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact xmlLegal Help (help@xmllegal.org)  or  Winchel "Todd" VincentIII (Todd.Vincent@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/">
+						<lml:Description>Created.</lml:Description>
+						<lml:Date>2011-08-04</lml:Date>
+						<lml:Editor>Prabhath Pallati</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:CopiedFrom>http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Response/EMR/01/GetAddressDetails/01/</lml:CopiedFrom>
+						<lml:Description>Copied.</lml:Description>
+						<lml:Date>2018-10-20</lml:Date>
+						<lml:Editor>Schema Generator</lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/EMR/01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:complexType name="AddressDetails">
+		<xsd:sequence>
+			<xsd:element ref="Suffixes" minOccurs="0"/>
+			<xsd:element ref="Cities" minOccurs="0"/>
+			<xsd:element ref="States" minOccurs="0"/>
+			<xsd:element ref="Countries" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Suffixes">
+		<xsd:sequence>
+			<xsd:element ref="Suffix" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Cities">
+		<xsd:sequence>
+			<xsd:element ref="City" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="States">
+		<xsd:sequence>
+			<xsd:element ref="State" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Countries">
+		<xsd:sequence>
+			<xsd:element ref="Country" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Suffix">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="City">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+				<xsd:attribute name="Country" type="CountryAttribute"/>
+				<xsd:attribute name="State" type="StateAttribute"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="State">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+				<xsd:attribute name="Country" type="CountryAttribute"/>
+				<xsd:attribute name="Code" type="CodeAttribute"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Country">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+				<xsd:attribute name="Code2" type="Code2Attribute"/>
+				<xsd:attribute name="Code3" type="Code3Attribute"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="CountryAttribute">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="StateAttribute">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CodeAttribute">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="Code2Attribute">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="Code3Attribute">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:element name="AddressDetails" type="AddressDetails"/>
+	<xsd:element name="Suffixes" type="Suffixes"/>
+	<xsd:element name="Cities" type="Cities"/>
+	<xsd:element name="States" type="States"/>
+	<xsd:element name="Countries" type="Countries"/>
+	<xsd:element name="Suffix" type="Suffix"/>
+	<xsd:element name="City" type="City"/>
+	<xsd:element name="State" type="State"/>
+	<xsd:element name="Country" type="Country"/>
+</xsd:schema>

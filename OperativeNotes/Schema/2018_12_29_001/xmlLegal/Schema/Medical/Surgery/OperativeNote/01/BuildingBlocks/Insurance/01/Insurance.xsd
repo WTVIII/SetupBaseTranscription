@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Insurance/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Insurance/01/" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/">
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact xmlLegal Help (help@xmllegal.org)  or  Winchel "Todd" VincentIII (Todd.Vincent@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/">
+            <lml:Description>Created.</lml:Description>
+            <lml:Date>2010-05-20</lml:Date>
+            <lml:Editor>Prabhath Pallati</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Insurance/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2018-10-20</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/Attributes.xsd" />
+  <xsd:complexType name="Insurance">
+    <xsd:sequence>
+      <xsd:element ref="PatientID" />
+      <xsd:element ref="VisitNumber" />
+      <xsd:element ref="InsuranceType" />
+      <xsd:element ref="IsSelfPaid" minOccurs="0" />
+      <xsd:element ref="CompanyName" minOccurs="0" />
+      <xsd:element ref="NameInsured" minOccurs="0" />
+      <xsd:element ref="ID_SSN" minOccurs="0" />
+      <xsd:element ref="GroupNumber" minOccurs="0" />
+      <xsd:element ref="Authorization" minOccurs="0" />
+      <xsd:element ref="EmployerAndPhone" minOccurs="0" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="PatientID">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="VisitNumber">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="InsuranceType">
+    <xsd:simpleContent>
+      <xsd:extension base="InsuranceTypes">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="InsuranceTypes">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Primary" />
+      <xsd:enumeration value="Secondary" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="IsSelfPaid">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:boolean">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="CompanyName">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="NameInsured">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ID_SSN">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="GroupNumber">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Authorization">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="EmployerAndPhone">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:element name="Insurance" type="Insurance" />
+  <xsd:element name="PatientID" type="PatientID" />
+  <xsd:element name="VisitNumber" type="VisitNumber" />
+  <xsd:element name="InsuranceType" type="InsuranceType" />
+  <xsd:element name="IsSelfPaid" type="IsSelfPaid" />
+  <xsd:element name="CompanyName" type="CompanyName" />
+  <xsd:element name="NameInsured" type="NameInsured" />
+  <xsd:element name="ID_SSN" type="ID_SSN" />
+  <xsd:element name="GroupNumber" type="GroupNumber" />
+  <xsd:element name="Authorization" type="Authorization" />
+  <xsd:element name="EmployerAndPhone" type="EmployerAndPhone" />
+</xsd:schema>

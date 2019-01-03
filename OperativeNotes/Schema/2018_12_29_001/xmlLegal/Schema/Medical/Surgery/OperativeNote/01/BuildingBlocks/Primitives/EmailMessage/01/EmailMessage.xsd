@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Primitives/EmailMessage/01/" xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/" elementFormDefault="qualified" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Primitives/EmailMessage/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update>
+						<lml:Description> Added copyright and upldate history.   Corrected Primatives misspelling.</lml:Description>
+						<lml:Date>2002-09-14</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Added Structured Copyright and Update History</lml:Description>
+						<lml:Date>2003-02-18</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Deleted annotations as they were not in the correct format -- need to add these back in at some point.  Deleted blank enumerations.  Added attributes schema.</lml:Description>
+						<lml:Date>2004-07-05</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Normalized using xmlLegal Normalizer 0.1.0.</lml:Description>
+						<lml:Date>2004-07-05</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:CopiedFrom>http://www.xmllegal.org/Schema/BuildingBlocks/Primitives/EmailMessage/01/</lml:CopiedFrom>
+						<lml:Description>Copied.</lml:Description>
+						<lml:Date>2009-04-10</lml:Date>
+						<lml:Editor></lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:complexType name="EmailMessage">
+		<xsd:sequence>
+			<xsd:element ref="From"/>
+			<xsd:element ref="To" maxOccurs="unbounded"/>
+			<xsd:element ref="Cc" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Bcc" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="Subject" minOccurs="0"/>
+			<xsd:element ref="Body" minOccurs="0"/>
+			<xsd:element ref="Signature" minOccurs="0"/>
+			<xsd:element ref="ReadReceipt"/>
+			<xsd:element ref="Priority"/>
+		</xsd:sequence>
+		<xsd:attribute name="MessageFormat" default="Plain Text" type="MessageFormats"/>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Body">
+		<xsd:simpleContent>
+			<xsd:extension base="Memo">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Priority">
+		<xsd:simpleContent>
+			<xsd:extension base="Priorities">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="From">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="To">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Cc">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Bcc">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Subject">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Signature">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ReadReceipt">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:boolean">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="Memo">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MessageFormats">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Plain Text"/>
+			<xsd:enumeration value="HTML"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Priorities">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Normal"/>
+			<xsd:enumeration value="High"/>
+			<xsd:enumeration value="Low"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="EmailMessage" type="EmailMessage"/>
+	<xsd:element name="Body" type="Body"/>
+	<xsd:element name="Priority" type="Priority"/>
+	<xsd:element name="From" type="From"/>
+	<xsd:element name="To" type="To"/>
+	<xsd:element name="Cc" type="Cc"/>
+	<xsd:element name="Bcc" type="Bcc"/>
+	<xsd:element name="Subject" type="Subject"/>
+	<xsd:element name="Signature" type="Signature"/>
+	<xsd:element name="ReadReceipt" type="ReadReceipt"/>
+</xsd:schema>

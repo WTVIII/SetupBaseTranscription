@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Head/DocumentProperties/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Head/DocumentProperties/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update>
+            <lml:Description> Added copyright and upldate history.   Corrected Primatives misspelling.</lml:Description>
+            <lml:Date>2002-09-14</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Added Structured Copyright and Update History</lml:Description>
+            <lml:Date>2003-02-18</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Deleted vocabulary.  Changed OutputFormats simple typle to allow for well-formed XML as well as other types of Simple and Complex XML.</lml:Description>
+            <lml:Date>2004-07-05</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/BuildingBlocks/Head/DocumentProperties/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2009-03-28</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd" />
+  <xsd:complexType name="DocumentProperties">
+    <xsd:sequence>
+      <xsd:element ref="OutputFormat" />
+      <xsd:element ref="DocumentCategory" />
+      <xsd:element ref="CreatedByApplication" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="OutputFormat">
+    <xsd:simpleContent>
+      <xsd:extension base="OutputFormats">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="DocumentCategory">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+        <xsd:attribute name="Template" type="YesNo" use="required" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="YesNo">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Yes" />
+      <xsd:enumeration value="No" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="OutputFormats">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Complex XML (Global)" />
+      <xsd:enumeration value="Complex XML (Local)" />
+      <xsd:enumeration value="Simple XML" />
+      <xsd:enumeration value="Well-Formed" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="DocumentCategories">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Message" />
+      <xsd:enumeration value="Form" />
+      <xsd:enumeration value="Document" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="CreatedByApplication">
+    <xsd:sequence>
+      <xsd:element ref="Name" />
+      <xsd:element ref="Version" />
+      <xsd:element ref="Organization" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="Name">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Version">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Organization">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:element name="DocumentProperties" type="DocumentProperties" />
+  <xsd:element name="OutputFormat" type="OutputFormat" />
+  <xsd:element name="DocumentCategory" type="DocumentCategory" />
+  <xsd:element name="CreatedByApplication" type="CreatedByApplication" />
+  <xsd:element name="Name" type="Name" />
+  <xsd:element name="Version" type="Version" />
+  <xsd:element name="Organization" type="Organization" />
+</xsd:schema>

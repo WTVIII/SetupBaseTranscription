@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Primitives/Address/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Primitives/Address/01/" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update>
+						<lml:Description> Added copyright and upldate history.   Corrected Primatives misspelling.</lml:Description>
+						<lml:Date>2002-09-14</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Added attributeGroup referance to "Attributes:Global" in complexType declaration for Line</lml:Description>
+						<lml:Date>2002-10-14</lml:Date>
+						<lml:Editor>Dhiraj Torane</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Added Structured Copyright and Update History</lml:Description>
+						<lml:Date>2003-02-18</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Changed relative path for Attributes to add 'Schema'.</lml:Description>
+						<lml:Date>2003-02-23</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:CopiedFrom>http://www.xmllegal.org/Schema/BuildingBlocks/Primitives/Address/01/</lml:CopiedFrom>
+						<lml:Description>Copied.</lml:Description>
+						<lml:Date>2009-03-28</lml:Date>
+						<lml:Editor>Schema Generator</lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:complexType name="Address" mixed="true">
+		<xsd:sequence>
+			<xsd:element ref="Line" minOccurs="0" maxOccurs="5"/>
+			<xsd:element ref="Suburb" minOccurs="0"/>
+			<xsd:element ref="City" minOccurs="0"/>
+			<xsd:element ref="State" minOccurs="0"/>
+			<xsd:element ref="County" minOccurs="0"/>
+			<xsd:element ref="PostalCode" minOccurs="0"/>
+			<xsd:element ref="Country" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attribute name="AddressType" type="AddressTypes"/>
+		<xsd:attribute name="Status" type="Statuses"/>
+		<xsd:attribute name="StatusDate" type="xsd:date"/>
+		<xsd:attribute name="Relationship" type="Relationships"/>
+	</xsd:complexType>
+	<xsd:complexType name="Line" mixed="true">
+		<xsd:all>
+			<xsd:element ref="StreetNumber" minOccurs="0"/>
+			<xsd:element ref="StreetName" minOccurs="0"/>
+			<xsd:element ref="StreetSuffix" minOccurs="0"/>
+			<xsd:element ref="UnitNumber" minOccurs="0"/>
+			<xsd:element ref="Suite" minOccurs="0"/>
+			<xsd:element ref="BuildingName" minOccurs="0"/>
+			<xsd:element ref="ApartmentNumber" minOccurs="0"/>
+			<xsd:element ref="POBox" minOccurs="0"/>
+		</xsd:all>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="UnitNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="StreetName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="StreetNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="StreetSuffix">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ApartmentNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="POBox">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="BuildingName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Suite">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Suburb">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="City">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="State">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="County">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PostalCode">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Country">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="AddressTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Home"/>
+			<xsd:enumeration value="Work"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Statuses">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Current"/>
+			<xsd:enumeration value="Past"/>
+			<xsd:enumeration value="Future"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Relationships">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Personal"/>
+			<xsd:enumeration value="Contact Person"/>
+			<xsd:enumeration value="Employee"/>
+			<xsd:enumeration value="Employer"/>
+			<xsd:enumeration value="Husband"/>
+			<xsd:enumeration value="Wife"/>
+			<xsd:enumeration value="Spouse"/>
+			<xsd:enumeration value="Partner"/>
+			<xsd:enumeration value="Son"/>
+			<xsd:enumeration value="Daughter"/>
+			<xsd:enumeration value="Father"/>
+			<xsd:enumeration value="Stepfather"/>
+			<xsd:enumeration value="Mother"/>
+			<xsd:enumeration value="Stepmother"/>
+			<xsd:enumeration value="Parent"/>
+			<xsd:enumeration value="Grandfather"/>
+			<xsd:enumeration value="Grandmother"/>
+			<xsd:enumeration value="Grandparent"/>
+			<xsd:enumeration value="Aunt"/>
+			<xsd:enumeration value="Uncle"/>
+			<xsd:enumeration value="Inlaw"/>
+			<xsd:enumeration value="Neighbor"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="Address" type="Address"/>
+	<xsd:element name="Line" type="Line"/>
+	<xsd:element name="UnitNumber" type="UnitNumber"/>
+	<xsd:element name="StreetName" type="StreetName"/>
+	<xsd:element name="StreetNumber" type="StreetNumber"/>
+	<xsd:element name="StreetSuffix" type="StreetSuffix"/>
+	<xsd:element name="ApartmentNumber" type="ApartmentNumber"/>
+	<xsd:element name="POBox" type="POBox"/>
+	<xsd:element name="BuildingName" type="BuildingName"/>
+	<xsd:element name="Suite" type="Suite"/>
+	<xsd:element name="Suburb" type="Suburb"/>
+	<xsd:element name="City" type="City"/>
+	<xsd:element name="State" type="State"/>
+	<xsd:element name="County" type="County"/>
+	<xsd:element name="PostalCode" type="PostalCode"/>
+	<xsd:element name="Country" type="Country"/>
+	<xsd:group name="Vocabulary">
+		<xsd:choice>
+			<xsd:element ref="Address"/>
+			<xsd:element ref="Line"/>
+			<xsd:element ref="Suburb"/>
+			<xsd:element ref="City"/>
+			<xsd:element ref="State"/>
+			<xsd:element ref="County"/>
+			<xsd:element ref="PostalCode"/>
+			<xsd:element ref="Country"/>
+			<xsd:element ref="StreetNumber"/>
+			<xsd:element ref="StreetName"/>
+			<xsd:element ref="StreetSuffix"/>
+			<xsd:element ref="UnitNumber"/>
+			<xsd:element ref="Suite"/>
+			<xsd:element ref="BuildingName"/>
+			<xsd:element ref="ApartmentNumber"/>
+			<xsd:element ref="POBox"/>
+		</xsd:choice>
+	</xsd:group>
+</xsd:schema>

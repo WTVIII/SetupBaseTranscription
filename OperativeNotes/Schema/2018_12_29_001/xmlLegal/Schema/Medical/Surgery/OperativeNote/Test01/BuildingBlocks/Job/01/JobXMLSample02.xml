@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Job:Job xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Job="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Job/01/" xmlns:AudioFile="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/" xmlns:AudioFiles="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFiles/02/" xsi:schemaLocation="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Job/01/ Job.xsd">
+	<Job:Number>78</Job:Number>
+	<Job:DictatorName>David Kirn</Job:DictatorName>
+	<Job:DictatorID>7104</Job:DictatorID>
+	<Job:MedicalRecordNumber PatientID="9">MRN48999388</Job:MedicalRecordNumber>
+	<Job:ServiceDate>2001-12-17T09:30:47Z</Job:ServiceDate>
+	<Job:Priority>0</Job:Priority>
+	<Job:AudioFiles>
+		<AudioFiles:AudioFile>
+			<AudioFile:DocumentID>78</AudioFile:DocumentID>
+			<AudioFile:ID>9_Khade_Sanket_2018_03_22_17_58_12</AudioFile:ID>
+			<AudioFile:Path>..\78\9_Khade_Sanket_2018_03_22_17_58_12.wav</AudioFile:Path>
+			<AudioFile:DictationDate>2018-03-22</AudioFile:DictationDate>
+			<AudioFile:DictationTime>17:58:12+05:00</AudioFile:DictationTime>
+			<AudioFile:Size Unit="Bytes">33</AudioFile:Size>
+			<AudioFile:Duration Unit="Seconds">20</AudioFile:Duration>
+			<AudioFile:File>9_Khade Sanket_2018_03_22_17_58_12.wav</AudioFile:File>
+		</AudioFiles:AudioFile>
+		<AudioFiles:AudioFile>
+			<AudioFile:DocumentID>78</AudioFile:DocumentID>
+			<AudioFile:ID>9_Khade Sanket_2018_03_22_17_58_37</AudioFile:ID>
+			<AudioFile:Path>..\78\9_Khade_Sanket_2018_03_22_17_58_37.wav</AudioFile:Path>
+			<AudioFile:DictationDate>2018-03-22</AudioFile:DictationDate>
+			<AudioFile:DictationTime>17:58:37+05:00</AudioFile:DictationTime>
+			<AudioFile:Size Unit="Bytes">43</AudioFile:Size>
+			<AudioFile:Duration Unit="Seconds">25</AudioFile:Duration>
+			<AudioFile:File>9_Khade_Sanket_2018_03_22_17_58_37.wav</AudioFile:File>
+		</AudioFiles:AudioFile>
+	</Job:AudioFiles>
+</Job:Job>

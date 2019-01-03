@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" xmlns:Date="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Date/01/" xmlns:Time="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Time/01/" xmlns:Citation="http://www.xmllegal.org/Schema/Citation/01/" xmlns:Vocabulary="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Vocabulary/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Inline/01/" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Inline/01/" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update>
+						<lml:Description> Added copyright and upldate history.  Corrected Primatives misspelling.  Took out xsd:import for Attributes, Time and Date as these get imported in Vocabulary.xsd.</lml:Description>
+						<lml:Date>2002-09-14</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>  Added maxOccurs to Header and Footer elements at request of Paul Martin.</lml:Description>
+						<lml:Date>2002-10-17</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>1. Added xsd:import for Attributes.xsd. 2. Moved xsd:complexType name="Inline" to the first position after xsd:import</lml:Description>
+						<lml:Date>2002-10-24</lml:Date>
+						<lml:Editor>Dhiraj Thorane</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Added Structured Copyright and Update History</lml:Description>
+						<lml:Date>2003-02-18</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Added import statement for Date and Time schemas.</lml:Description>
+						<lml:Date>2005-06-03</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:CopiedFrom>http://www.xmllegal.org/Schema/BuildingBlocks/Inline/01/</lml:CopiedFrom>
+						<lml:Description>Copied.</lml:Description>
+						<lml:Date>2009-03-28</lml:Date>
+						<lml:Editor>Schema Generator</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Added Object element.</lml:Description>
+						<lml:Date>2009-04-10</lml:Date>
+						<lml:Editor>Schema Generator</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:Description>Added Object Attributes to Inline:Object, partly to replace schemas that </lml:Description>
+						<lml:Date>2009-04-10</lml:Date>
+						<lml:Editor>Schema Generator</lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<!-- The NoteText elements should really have Paragraph content models.  This means that Paragraph can't have Table and Outline within it or Outline and Table cannot have Paragraph within them -->
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Vocabulary/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Vocabulary/01/Vocabulary.xsd"/>
+	<!--<xsd:import namespace="http://www.xmllegal.org/Schema/Citation/01/" schemaLocation="../../../Citation/01/Citation.xsd"/>-->
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Date/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Date/01/Date.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Time/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Time/01/Time.xsd"/>
+	<xsd:complexType name="Inline" mixed="true">
+		<xsd:choice maxOccurs="2">
+			<xsd:element ref="Label" minOccurs="0"/>
+			<xsd:group ref="Vocabulary:Vocabulary" minOccurs="0"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Attribution"/>
+		<xsd:attributeGroup ref="Attributes:Position"/>
+	</xsd:complexType>
+	<xsd:complexType name="Label">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+				<xsd:attributeGroup ref="Attributes:Attribution"/>
+				<xsd:attributeGroup ref="Attributes:Position"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:group name="Inline">
+		<xsd:choice>
+			<xsd:group ref="Format"/>
+			<xsd:group ref="PageLine"/>
+			<xsd:group ref="Link"/>
+			<xsd:group ref="Notes"/>
+			<xsd:element ref="Sentence"/>
+			<xsd:element ref="Object"/>
+			<!--<xsd:element ref="Citation:Citation"/>-->
+			<xsd:group ref="Vocabulary:Vocabulary"/>
+			<!--  Outline, Table, Object -->
+		</xsd:choice>
+	</xsd:group>
+	<xsd:group name="InlineHeadings">
+		<xsd:choice>
+			<xsd:group ref="Format"/>
+			<xsd:group ref="Link"/>
+			<xsd:group ref="Notes"/>
+			<!--<xsd:element ref="Citation:Citation"/>-->
+			<xsd:group ref="Vocabulary:Vocabulary"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:group name="InlineNotes">
+		<xsd:choice>
+			<xsd:group ref="Format"/>
+			<xsd:group ref="Link"/>
+			<xsd:element ref="Sentence"/>
+			<!--<xsd:element ref="Citation:Citation"/>-->
+			<xsd:group ref="Vocabulary:Vocabulary"/>
+			<!-- Problem here is that Notes should have paragraphs, but paragraphs usually have inline content -->
+		</xsd:choice>
+	</xsd:group>
+	<xsd:group name="Format">
+		<xsd:choice>
+			<xsd:element ref="Number"/>
+			<xsd:element ref="Bold"/>
+			<xsd:element ref="Italic"/>
+			<xsd:element ref="Underline"/>
+			<xsd:element ref="Highlight"/>
+			<xsd:element ref="Strikethrough"/>
+			<xsd:element ref="Label"/>
+			<xsd:element ref="Inline"/>
+			<xsd:element ref="Block"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:group name="PageLine">
+		<xsd:choice>
+			<xsd:element ref="Page" maxOccurs="unbounded"/>
+			<xsd:element ref="Line" maxOccurs="unbounded"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:group name="Link">
+		<xsd:choice>
+			<xsd:element ref="Bookmark"/>
+			<xsd:element ref="Link"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:group name="Notes">
+		<xsd:choice>
+			<xsd:element ref="Comment"/>
+			<xsd:element ref="Footnote"/>
+			<xsd:element ref="Endnote"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:complexType name="Number">
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Bold">
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Attribution"/>
+		<xsd:attributeGroup ref="Attributes:Position"/>
+	</xsd:complexType>
+	<xsd:complexType name="Italic">
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Attribution"/>
+		<xsd:attributeGroup ref="Attributes:Position"/>
+	</xsd:complexType>
+	<xsd:complexType name="Underline">
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Attribution"/>
+		<xsd:attributeGroup ref="Attributes:Position"/>
+	</xsd:complexType>
+	<xsd:complexType name="Highlight">
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Attribution"/>
+		<xsd:attributeGroup ref="Attributes:Position"/>
+	</xsd:complexType>
+	<xsd:complexType name="Strikethrough">
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Attribution"/>
+		<xsd:attributeGroup ref="Attributes:Position"/>
+	</xsd:complexType>
+	<xsd:complexType name="Block" mixed="true">
+		<xsd:choice maxOccurs="2">
+			<xsd:element ref="Label" minOccurs="0"/>
+			<xsd:group ref="Vocabulary:Vocabulary" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Attribution"/>
+		<xsd:attributeGroup ref="Attributes:Position"/>
+	</xsd:complexType>
+	<xsd:complexType name="Comment">
+		<xsd:sequence>
+			<xsd:element ref="CommentNumber"/>
+			<xsd:element ref="CommentText"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Attribution"/>
+	</xsd:complexType>
+	<xsd:complexType name="CommentNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CommentText" mixed="true">
+		<xsd:choice>
+			<xsd:group ref="InlineNotes"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Endnote">
+		<xsd:sequence>
+			<xsd:element ref="EndnoteNumber"/>
+			<xsd:element ref="EndnoteText"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Attribution"/>
+	</xsd:complexType>
+	<xsd:complexType name="EndnoteNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="EndnoteText" mixed="true">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:group ref="InlineNotes"/>
+			<!-- Need Paragraph here -->
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Footnote">
+		<xsd:sequence>
+			<xsd:element ref="FootnoteNumber"/>
+			<xsd:element ref="FootnoteText"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Attribution"/>
+	</xsd:complexType>
+	<xsd:complexType name="FootnoteNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="FootnoteText" mixed="true">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:group ref="InlineNotes"/>
+			<!-- Need Paragraph here -->
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Bookmark">
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Attribution"/>
+		<xsd:attributeGroup ref="Attributes:Position"/>
+	</xsd:complexType>
+	<xsd:complexType name="Link">
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Attribution"/>
+		<xsd:attribute name="URI" type="xsd:string"/>
+		<xsd:attribute name="LinkTarget" type="xsd:string"/>
+		<xsd:attribute name="HoverText" type="xsd:string"/>
+		<xsd:attribute name="Link" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="Line" mixed="true">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+				<xsd:attributeGroup ref="Attributes:Position"/>
+				<xsd:attribute name="Vendor" type="xsd:string"/>
+				<xsd:attribute name="Characters" type="xsd:integer"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Page" mixed="true">
+		<xsd:choice minOccurs="0">
+			<xsd:element ref="Header" maxOccurs="unbounded"/>
+			<xsd:element ref="Footer" maxOccurs="unbounded"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Position"/>
+		<xsd:attribute name="Vendor" type="xsd:string"/>
+		<xsd:attribute name="Lines" type="xsd:integer"/>
+	</xsd:complexType>
+	<xsd:complexType name="Header" mixed="true">
+		<xsd:all>
+			<xsd:element name="PageNumber" minOccurs="0"/>
+			<xsd:element name="DocumentHeader" minOccurs="0"/>
+			<xsd:element name="DocumentTitle" minOccurs="0"/>
+			<xsd:element name="DocumentVersion" minOccurs="0"/>
+			<xsd:element name="Copyright" minOccurs="0"/>
+			<xsd:element name="Author" minOccurs="0"/>
+			<xsd:element ref="Date:Date" minOccurs="0"/>
+			<xsd:element ref="Time:Time" minOccurs="0"/>
+		</xsd:all>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Footer" mixed="true">
+		<xsd:all>
+			<xsd:element name="PageNumber" minOccurs="0"/>
+			<xsd:element name="DocumentFooter" minOccurs="0"/>
+			<xsd:element name="DocumentTitle" minOccurs="0"/>
+			<xsd:element name="DocumentVersion" minOccurs="0"/>
+			<xsd:element name="Copyright" minOccurs="0"/>
+			<xsd:element name="Author" minOccurs="0"/>
+			<xsd:element ref="Date:Date" minOccurs="0"/>
+			<xsd:element ref="Time:Time" minOccurs="0"/>
+		</xsd:all>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Sentence" mixed="true">
+		<xsd:sequence>
+			<xsd:any/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Object" mixed="true">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+				<xsd:attribute name="ObjectName" type="xsd:string"/>
+				<xsd:attribute name="ObjectType" type="xsd:string"/>
+				<xsd:attribute name="ObjectContent" type="xsd:string"/>
+				<xsd:attribute name="MIMEType" type="xsd:string"/>
+				<xsd:attribute name="Transcribed" type="xsd:string"/>
+				<xsd:attribute name="Approved" type="xsd:string"/>
+				<xsd:attribute name="Size" type="xsd:string"/>
+				<xsd:attribute name="Duration" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:element name="Number" type="Number"/>
+	<xsd:element name="Bold" type="Bold"/>
+	<xsd:element name="Italic" type="Italic"/>
+	<xsd:element name="Underline" type="Underline"/>
+	<xsd:element name="Highlight" type="Highlight"/>
+	<xsd:element name="Strikethrough" type="Strikethrough"/>
+	<xsd:element name="Label" type="Label"/>
+	<xsd:element name="Inline" type="Inline"/>
+	<xsd:element name="Block" type="Block"/>
+	<xsd:element name="Comment" type="Comment"/>
+	<xsd:element name="CommentNumber" type="CommentNumber"/>
+	<xsd:element name="CommentText" type="CommentText"/>
+	<xsd:element name="Endnote" type="Endnote"/>
+	<xsd:element name="EndnoteNumber" type="EndnoteNumber"/>
+	<xsd:element name="EndnoteText" type="EndnoteText"/>
+	<xsd:element name="Footnote" type="Footnote"/>
+	<xsd:element name="FootnoteNumber" type="FootnoteNumber"/>
+	<xsd:element name="FootnoteText" type="FootnoteText"/>
+	<xsd:element name="Bookmark" type="Bookmark"/>
+	<xsd:element name="Link" type="Link"/>
+	<xsd:element name="Line" type="Line"/>
+	<xsd:element name="Page" type="Page"/>
+	<xsd:element name="Header" type="Header"/>
+	<xsd:element name="Footer" type="Footer"/>
+	<xsd:element name="Sentence" type="Sentence"/>
+	<xsd:element name="Object" type="Object"/>
+</xsd:schema>

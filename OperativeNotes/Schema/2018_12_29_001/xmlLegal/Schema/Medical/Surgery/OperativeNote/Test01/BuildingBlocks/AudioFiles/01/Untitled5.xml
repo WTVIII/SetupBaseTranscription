@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AudioFiles:AudioFiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AudioFile="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/01/" xmlns:AudioFiles="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFiles/01/" xsi:schemaLocation="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFiles/01/ AudioFiles.xsd">
+	<AudioFiles:AudioFile>
+		<AudioFile:DocumentKey>D:\Data\OperativeNotes\Audio\OutboxArchive\47\47_Donald Duck_2018_03_22_01.txt</AudioFile:DocumentKey>
+		<AudioFile:PatientName>Blank</AudioFile:PatientName>
+		<AudioFile:MedicalRecordsNumber>Blank</AudioFile:MedicalRecordsNumber>
+		<AudioFile:File>This is test text for 47_Donald Duck_2018_03_22_01.wav.</AudioFile:File>
+	</AudioFiles:AudioFile>
+	<AudioFiles:AudioFile>
+		<AudioFile:DocumentKey>D:\Data\OperativeNotes\Audio\OutboxArchive\47\47_Donald Duck_2018_03_22_02.txt</AudioFile:DocumentKey>
+		<AudioFile:PatientName>Blank</AudioFile:PatientName>
+		<AudioFile:MedicalRecordsNumber>Blank</AudioFile:MedicalRecordsNumber>
+		<AudioFile:File>This is test text for 47_Donald Duck_2018_03_22_02.wav.</AudioFile:File>
+	</AudioFiles:AudioFile>
+	<AudioFiles:AudioFile>
+		<AudioFile:DocumentKey>D:\Data\OperativeNotes\Audio\OutboxArchive\47\47_Donald Duck_2018_03_22_03.txt</AudioFile:DocumentKey>
+		<AudioFile:PatientName>Blank</AudioFile:PatientName>
+		<AudioFile:MedicalRecordsNumber>Blank</AudioFile:MedicalRecordsNumber>
+		<AudioFile:File>This is test text for 47_Donald Duck_2018_03_22_03.wav.</AudioFile:File>
+	</AudioFiles:AudioFile>
+</AudioFiles:AudioFiles>

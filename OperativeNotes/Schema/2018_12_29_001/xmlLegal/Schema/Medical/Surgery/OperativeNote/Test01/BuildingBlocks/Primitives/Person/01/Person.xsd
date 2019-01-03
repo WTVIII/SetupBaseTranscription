@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Person/01/" version="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Person/01/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Person/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" xmlns:Address="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Address/01/" xmlns:Email="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Email/01/" xmlns:Phone="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Phone/01/">
+	<xsd:annotation>
+		<xsd:appinfo>
+      <lml:SchemaDescription>
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact xmlLegal Help (help@xmllegal.org)  or  Winchel "Todd" VincentIII (Todd.Vincent@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update>
+						<lml:CopiedFrom>http://www.xmllegal.org/Schema/Document/02/BuildingBlocks/Primitives/Person/01/</lml:CopiedFrom>
+						<lml:Description>Copied.</lml:Description>
+						<lml:Date>2009-07-06</lml:Date>
+						<lml:Editor>Prabhath Pallati</lml:Editor>
+					</lml:Update>
+          <lml:Update>
+            <lml:Description>Fixed issue with Genders simpleType - it had two enumerations with blank values.</lml:Description>
+            <lml:Date>2018-10-20</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Normalized using xmlSchemaGenerator Normalizer 0.1.7.</lml:Description>
+            <lml:Date>2018-10-20</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Address/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Address/01/Address.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Email/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Email/01/Email.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Phone/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Phone/01/Phone.xsd"/>
+	<xsd:complexType name="Person">
+		<xsd:sequence>
+			<xsd:element ref="Name"/>
+			<xsd:element ref="Addresses" minOccurs="0"/>
+			<xsd:element ref="Phones" minOccurs="0"/>
+			<xsd:element ref="Emails" minOccurs="0"/>
+			<xsd:element ref="Identifiers" minOccurs="0"/>
+			<xsd:element ref="Descriptions" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Name">
+		<xsd:sequence>
+			<xsd:element ref="Title" minOccurs="0"/>
+			<xsd:element ref="Salutation" minOccurs="0"/>
+			<xsd:element ref="FullName"/>
+			<xsd:element ref="Suffix" minOccurs="0"/>
+			<xsd:element ref="Designation" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="FullName" mixed="true">
+		<xsd:sequence>
+			<xsd:element ref="FirstName" minOccurs="0"/>
+			<xsd:element ref="MiddleName" minOccurs="0" maxOccurs="10"/>
+			<xsd:element ref="LastName" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Title">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Salutation">
+		<xsd:simpleContent>
+			<xsd:extension base="Salutations">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="FirstName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MiddleName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LastName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Suffix">
+		<xsd:simpleContent>
+			<xsd:extension base="Suffixes">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Designation">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Addresses">
+		<xsd:sequence>
+			<xsd:element ref="Address" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Phones">
+		<xsd:sequence>
+			<xsd:element ref="Phone" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Emails">
+		<xsd:sequence>
+			<xsd:element ref="Email" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Identifiers">
+		<xsd:sequence>
+			<xsd:element ref="Identifier" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Descriptions">
+		<xsd:sequence>
+			<xsd:element ref="Description" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Identifier">
+		<xsd:choice>
+			<xsd:element ref="SocialSecurityNumber" minOccurs="0"/>
+			<xsd:element ref="DriversLicense" minOccurs="0"/>
+			<xsd:element ref="StateIdentificationNumber" minOccurs="0"/>
+			<xsd:element ref="OTN" minOccurs="0"/>
+			<xsd:element ref="PassportNumber" minOccurs="0"/>
+			<xsd:element ref="BarNumber" minOccurs="0"/>
+			<xsd:element ref="BadgeNumber" minOccurs="0"/>
+			<xsd:element ref="ProfessionalLicenseNumber" minOccurs="0"/>
+			<xsd:element ref="FBINumber" minOccurs="0"/>
+			<xsd:element ref="ImmigrationNumber" minOccurs="0"/>
+			<xsd:element ref="CorrectionalIdentificationNumber" minOccurs="0"/>
+			<xsd:element ref="MilitaryIdentification" minOccurs="0"/>
+			<xsd:element ref="OtherIdentification" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="SocialSecurityNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DriversLicense">
+		<xsd:sequence>
+			<xsd:element ref="DriversLicenseNumber" minOccurs="0"/>
+			<xsd:element ref="DriversLicenseState" minOccurs="0"/>
+			<xsd:element ref="DriversLicenseType" minOccurs="0"/>
+			<xsd:element ref="DriversLicenseExpirationDate" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DriversLicenseNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DriversLicenseState">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DriversLicenseType">
+		<xsd:simpleContent>
+			<xsd:extension base="DriversLicenseTypes">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DriversLicenseExpirationDate">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:date">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="StateIdentificationNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OTN">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PassportNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="BarNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="State" type="xsd:string"/>
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="BadgeNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ProfessionalLicenseNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="FBINumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ImmigrationNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CorrectionalIdentificationNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MilitaryIdentification">
+		<xsd:sequence>
+			<xsd:element ref="MilitarySerialNumber"/>
+			<xsd:element ref="MilitaryBranch"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="MilitarySerialNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MilitaryBranch">
+		<xsd:simpleContent>
+			<xsd:extension base="MilitaryBranches">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OtherIdentification">
+		<xsd:sequence>
+			<xsd:element ref="OtherIdentificationName"/>
+			<xsd:element ref="OtherIdentificationValue"/>
+			<xsd:element ref="OtherIdentificationDescription" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="OtherIdentificationName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OtherIdentificationValue">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OtherIdentificationDescription">
+		<xsd:simpleContent>
+			<xsd:extension base="Memo">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Description">
+		<xsd:choice>
+			<xsd:element ref="Gender" minOccurs="0"/>
+			<xsd:element ref="Age" minOccurs="0"/>
+			<xsd:element ref="DateOfBirth" minOccurs="0"/>
+			<xsd:element ref="PlaceOfBirth" minOccurs="0"/>
+			<xsd:element ref="DateOfDeath" minOccurs="0"/>
+			<xsd:element ref="Ethnicity" minOccurs="0"/>
+			<xsd:element ref="NativeAmerican" minOccurs="0"/>
+			<xsd:element ref="Citizenship" minOccurs="0"/>
+			<xsd:element ref="LanguagesSpoken" minOccurs="0"/>
+			<xsd:element ref="EyeColor" minOccurs="0"/>
+			<xsd:element ref="Hair" minOccurs="0"/>
+			<xsd:element ref="ScarsMarksTattoos" minOccurs="0"/>
+			<xsd:element ref="Height" minOccurs="0"/>
+			<xsd:element ref="Weight" minOccurs="0"/>
+			<xsd:element ref="MaritalStatus" minOccurs="0"/>
+			<xsd:element ref="ActiveMilitaryDuty" minOccurs="0"/>
+			<xsd:element ref="Religion" minOccurs="0"/>
+			<xsd:element ref="ViolencePotential" minOccurs="0"/>
+			<xsd:element ref="Occupation" minOccurs="0"/>
+			<xsd:element ref="BloodType" minOccurs="0"/>
+			<xsd:element ref="MedicalCondition" minOccurs="0"/>
+			<xsd:element ref="HasSpecialNeeds" minOccurs="0"/>
+			<xsd:element ref="SpecialNeeds" minOccurs="0"/>
+			<xsd:element ref="DNALocus" minOccurs="0"/>
+			<xsd:element ref="OtherCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Gender">
+		<xsd:simpleContent>
+			<xsd:extension base="Genders">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Age">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DateOfBirth">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:date">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PlaceOfBirth">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DateOfDeath">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:date">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Ethnicity">
+		<xsd:simpleContent>
+			<xsd:extension base="Ethnicities">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="NativeAmerican">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:boolean">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Citizenship">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LanguagesSpoken">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="EyeColor">
+		<xsd:simpleContent>
+			<xsd:extension base="EyeColors">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Hair">
+		<xsd:simpleContent>
+			<xsd:extension base="HairColors">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ScarsMarksTattoos">
+		<xsd:sequence>
+			<xsd:element ref="ScarsMarksTattoosCode"/>
+			<xsd:element ref="ScarsMarksTattoosType"/>
+			<xsd:element ref="ScarsMarksTattoosLocation"/>
+			<xsd:element ref="ScarsMarksTattoosDescription"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="ScarsMarksTattoosCode">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ScarsMarksTattoosType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ScarsMarksTattoosLocation">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ScarsMarksTattoosDescription">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Height">
+		<xsd:choice>
+			<xsd:element ref="MetricHeight"/>
+			<xsd:element ref="StandardHeight"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="MetricHeight">
+		<xsd:sequence>
+			<xsd:element ref="Meters"/>
+			<xsd:element ref="Centimeters"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="StandardHeight">
+		<xsd:sequence>
+			<xsd:element ref="Feet"/>
+			<xsd:element ref="Inches"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Weight">
+		<xsd:choice>
+			<xsd:element ref="MetricWeight"/>
+			<xsd:element ref="StandardWeight"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="MetricWeight">
+		<xsd:sequence>
+			<xsd:element ref="Kilograms"/>
+			<xsd:element ref="Grams"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="StandardWeight">
+		<xsd:sequence>
+			<xsd:element ref="Pounds"/>
+			<xsd:element ref="Ounces"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Meters">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Centimeters">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Feet">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Inches">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Kilograms">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Grams">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Pounds">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Ounces">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MaritalStatus">
+		<xsd:simpleContent>
+			<xsd:extension base="MaritalStatuses">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ActiveMilitaryDuty">
+		<xsd:simpleContent>
+			<xsd:extension base="YesNo">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Religion">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ViolencePotential">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Occupation">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="BloodType">
+		<xsd:simpleContent>
+			<xsd:extension base="BloodTypes">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MedicalCondition">
+		<xsd:simpleContent>
+			<xsd:extension base="MedicalConditions">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="HasSpecialNeeds">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:boolean">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SpecialNeeds">
+		<xsd:simpleContent>
+			<xsd:extension base="Memo">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DNALocus">
+		<xsd:simpleContent>
+			<xsd:extension base="DNALoci">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OtherCharacteristic">
+		<xsd:sequence>
+			<xsd:element ref="OtherCharacteristicName"/>
+			<xsd:element ref="OtherCharacteristicValue"/>
+			<xsd:element ref="OtherCharacteristicDescription" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="OtherCharacteristicName">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OtherCharacteristicValue">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="OtherCharacteristicDescription">
+		<xsd:simpleContent>
+			<xsd:extension base="Memo">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="Salutations">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Mr."/>
+			<xsd:enumeration value="Ms."/>
+			<xsd:enumeration value="Mrs."/>
+			<xsd:enumeration value="Miss"/>
+			<xsd:enumeration value="Judge"/>
+			<xsd:enumeration value="Doctor"/>
+			<xsd:enumeration value="Professor"/>
+			<xsd:enumeration value="Officer"/>
+			<xsd:enumeration value="Investigator"/>
+			<xsd:enumeration value="Chief"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Suffixes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Jr."/>
+			<xsd:enumeration value="Sr."/>
+			<xsd:enumeration value="III"/>
+			<xsd:enumeration value="IV"/>
+			<xsd:enumeration value="V"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DriversLicenseTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Auto"/>
+			<xsd:enumeration value="Commercial"/>
+			<xsd:enumeration value="Motorcycle"/>
+			<xsd:enumeration value="Permit"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MilitaryBranches">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Air Force"/>
+			<xsd:enumeration value="Air National Guard"/>
+			<xsd:enumeration value="Army"/>
+			<xsd:enumeration value="Marine Corps"/>
+			<xsd:enumeration value="National Guard"/>
+			<xsd:enumeration value="Navy"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Memo">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="Genders">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Male"/>
+			<xsd:enumeration value="Female"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EyeColors">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Black"/>
+			<xsd:enumeration value="Blue"/>
+			<xsd:enumeration value="Brown"/>
+			<xsd:enumeration value="Gray"/>
+			<xsd:enumeration value="Green"/>
+			<xsd:enumeration value="Hazel"/>
+			<xsd:enumeration value="Multicolored"/>
+			<xsd:enumeration value="Pink"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="HairColors">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Black"/>
+			<xsd:enumeration value="Blond"/>
+			<xsd:enumeration value="Blue"/>
+			<xsd:enumeration value="Brown"/>
+			<xsd:enumeration value="Gray"/>
+			<xsd:enumeration value="Green"/>
+			<xsd:enumeration value="Multicolored"/>
+			<xsd:enumeration value="Orange"/>
+			<xsd:enumeration value="Pink"/>
+			<xsd:enumeration value="Purple"/>
+			<xsd:enumeration value="Red"/>
+			<xsd:enumeration value="Sandy"/>
+			<xsd:enumeration value="White"/>
+			<xsd:enumeration value="Bald"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Ethnicities">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Native American"/>
+			<xsd:enumeration value="Asian"/>
+			<xsd:enumeration value="Black"/>
+			<xsd:enumeration value="White"/>
+			<xsd:enumeration value="Unknown"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MaritalStatuses">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Single"/>
+			<xsd:enumeration value="Married"/>
+			<xsd:enumeration value="Divorced"/>
+			<xsd:enumeration value="Separated"/>
+			<xsd:enumeration value="Widowed"/>
+			<xsd:enumeration value="Never Married"/>
+			<xsd:enumeration value="Unmarried Partner"/>
+			<xsd:enumeration value="Unknown"/>
+			<xsd:enumeration value="Not Applicable"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BloodTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="A Positive"/>
+			<xsd:enumeration value="A Negative"/>
+			<xsd:enumeration value="A Unknown"/>
+			<xsd:enumeration value="B Positive"/>
+			<xsd:enumeration value="B Negative"/>
+			<xsd:enumeration value="B Unknown"/>
+			<xsd:enumeration value="AB Positive"/>
+			<xsd:enumeration value="AB Negative"/>
+			<xsd:enumeration value="AB Unknown"/>
+			<xsd:enumeration value="O Positive"/>
+			<xsd:enumeration value="O Negative"/>
+			<xsd:enumeration value="O Unknown"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MedicalConditions">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Alcoholic"/>
+			<xsd:enumeration value="Allergies"/>
+			<xsd:enumeration value="Diabetic"/>
+			<xsd:enumeration value="Epilepsy"/>
+			<xsd:enumeration value="Heart Condition"/>
+			<xsd:enumeration value="Hemophiliac"/>
+			<xsd:enumeration value="Medication Required"/>
+			<xsd:enumeration value="Suicidal"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DNALoci">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="CSF1PO"/>
+			<xsd:enumeration value="D13S317"/>
+			<xsd:enumeration value="D16S539"/>
+			<xsd:enumeration value="D18S51"/>
+			<xsd:enumeration value="D21S11"/>
+			<xsd:enumeration value="D3S1358"/>
+			<xsd:enumeration value="D5S818"/>
+			<xsd:enumeration value="D7S820"/>
+			<xsd:enumeration value="D8S1179"/>
+			<xsd:enumeration value="FGA"/>
+			<xsd:enumeration value="TH01"/>
+			<xsd:enumeration value="TPOX"/>
+			<xsd:enumeration value="VWA"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="YesNo">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Yes"/>
+			<xsd:enumeration value="No"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="Person" type="Person"/>
+	<xsd:element name="Name" type="Name"/>
+  <xsd:element name="FullName" type="FullName" />
+	<xsd:element name="Title" type="Title"/>
+	<xsd:element name="Salutation" type="Salutation"/>
+	<xsd:element name="FirstName" type="FirstName"/>
+	<xsd:element name="MiddleName" type="MiddleName"/>
+	<xsd:element name="LastName" type="LastName"/>
+	<xsd:element name="Suffix" type="Suffix"/>
+	<xsd:element name="Designation" type="Designation"/>
+	<xsd:element name="Addresses" type="Addresses"/>
+	<xsd:element name="Phones" type="Phones"/>
+	<xsd:element name="Emails" type="Emails"/>
+	<xsd:element name="Identifiers" type="Identifiers"/>
+	<xsd:element name="Descriptions" type="Descriptions"/>
+	<xsd:element name="Identifier" type="Identifier"/>
+	<xsd:element name="SocialSecurityNumber" type="SocialSecurityNumber"/>
+	<xsd:element name="DriversLicense" type="DriversLicense"/>
+	<xsd:element name="DriversLicenseNumber" type="DriversLicenseNumber"/>
+	<xsd:element name="DriversLicenseState" type="DriversLicenseState"/>
+	<xsd:element name="DriversLicenseType" type="DriversLicenseType"/>
+	<xsd:element name="DriversLicenseExpirationDate" type="DriversLicenseExpirationDate"/>
+	<xsd:element name="StateIdentificationNumber" type="StateIdentificationNumber"/>
+	<xsd:element name="OTN" type="OTN"/>
+	<xsd:element name="PassportNumber" type="PassportNumber"/>
+	<xsd:element name="BarNumber" type="BarNumber"/>
+	<xsd:element name="BadgeNumber" type="BadgeNumber"/>
+	<xsd:element name="ProfessionalLicenseNumber" type="ProfessionalLicenseNumber"/>
+	<xsd:element name="FBINumber" type="FBINumber"/>
+	<xsd:element name="ImmigrationNumber" type="ImmigrationNumber"/>
+	<xsd:element name="CorrectionalIdentificationNumber" type="CorrectionalIdentificationNumber"/>
+	<xsd:element name="MilitaryIdentification" type="MilitaryIdentification"/>
+	<xsd:element name="MilitarySerialNumber" type="MilitarySerialNumber"/>
+	<xsd:element name="MilitaryBranch" type="MilitaryBranch"/>
+	<xsd:element name="OtherIdentification" type="OtherIdentification"/>
+	<xsd:element name="OtherIdentificationName" type="OtherIdentificationName"/>
+	<xsd:element name="OtherIdentificationValue" type="OtherIdentificationValue"/>
+	<xsd:element name="OtherIdentificationDescription" type="OtherIdentificationDescription"/>
+	<xsd:element name="Description" type="Description"/>
+	<xsd:element name="Gender" type="Gender"/>
+	<xsd:element name="Age" type="Age"/>
+	<xsd:element name="DateOfBirth" type="DateOfBirth"/>
+	<xsd:element name="PlaceOfBirth" type="PlaceOfBirth"/>
+	<xsd:element name="DateOfDeath" type="DateOfDeath"/>
+	<xsd:element name="Ethnicity" type="Ethnicity"/>
+	<xsd:element name="NativeAmerican" type="NativeAmerican"/>
+	<xsd:element name="Citizenship" type="Citizenship"/>
+	<xsd:element name="LanguagesSpoken" type="LanguagesSpoken"/>
+	<xsd:element name="EyeColor" type="EyeColor"/>
+	<xsd:element name="Hair" type="Hair"/>
+	<xsd:element name="ScarsMarksTattoos" type="ScarsMarksTattoos"/>
+	<xsd:element name="ScarsMarksTattoosCode" type="ScarsMarksTattoosCode"/>
+	<xsd:element name="ScarsMarksTattoosType" type="ScarsMarksTattoosType"/>
+	<xsd:element name="ScarsMarksTattoosLocation" type="ScarsMarksTattoosLocation"/>
+	<xsd:element name="ScarsMarksTattoosDescription" type="ScarsMarksTattoosDescription"/>
+	<xsd:element name="Height" type="Height"/>
+	<xsd:element name="MetricHeight" type="MetricHeight"/>
+	<xsd:element name="StandardHeight" type="StandardHeight"/>
+	<xsd:element name="Weight" type="Weight"/>
+	<xsd:element name="MetricWeight" type="MetricWeight"/>
+	<xsd:element name="StandardWeight" type="StandardWeight"/>
+	<xsd:element name="Meters" type="Meters"/>
+	<xsd:element name="Centimeters" type="Centimeters"/>
+	<xsd:element name="Feet" type="Feet"/>
+	<xsd:element name="Inches" type="Inches"/>
+	<xsd:element name="Kilograms" type="Kilograms"/>
+	<xsd:element name="Grams" type="Grams"/>
+	<xsd:element name="Pounds" type="Pounds"/>
+	<xsd:element name="Ounces" type="Ounces"/>
+	<xsd:element name="MaritalStatus" type="MaritalStatus"/>
+	<xsd:element name="ActiveMilitaryDuty" type="ActiveMilitaryDuty"/>
+	<xsd:element name="Religion" type="Religion"/>
+	<xsd:element name="ViolencePotential" type="ViolencePotential"/>
+	<xsd:element name="Occupation" type="Occupation"/>
+	<xsd:element name="BloodType" type="BloodType"/>
+	<xsd:element name="MedicalCondition" type="MedicalCondition"/>
+	<xsd:element name="HasSpecialNeeds" type="HasSpecialNeeds"/>
+	<xsd:element name="SpecialNeeds" type="SpecialNeeds"/>
+	<xsd:element name="DNALocus" type="DNALocus"/>
+	<xsd:element name="OtherCharacteristic" type="OtherCharacteristic"/>
+	<xsd:element name="OtherCharacteristicName" type="OtherCharacteristicName"/>
+	<xsd:element name="OtherCharacteristicValue" type="OtherCharacteristicValue"/>
+	<xsd:element name="OtherCharacteristicDescription" type="OtherCharacteristicDescription"/>
+	<xsd:element name="Address" type="Address:Address"/>
+	<xsd:element name="Phone" type="Phone:Phone"/>
+	<xsd:element name="Email" type="Email:Email"/>
+  <xsd:group name="Vocabulary">
+    <xsd:choice>
+      <xsd:element ref="Person" />
+      <xsd:element ref="Addresses" />
+      <xsd:element ref="Phones" />
+      <xsd:element ref="Emails" />
+      <xsd:element ref="Identifiers" />
+      <xsd:element ref="Descriptions" />
+      <xsd:element ref="Name" />
+      <xsd:element ref="FullName" />
+      <xsd:element ref="Title" />
+      <xsd:element ref="Salutation" />
+      <xsd:element ref="FirstName" />
+      <xsd:element ref="MiddleName" />
+      <xsd:element ref="LastName" />
+      <xsd:element ref="Suffix" />
+      <xsd:element ref="Designation" />
+      <xsd:element ref="Description" />
+      <xsd:element ref="Age" />
+      <xsd:element ref="Gender" />
+      <xsd:element ref="Height" />
+      <xsd:element ref="Weight" />
+      <xsd:element ref="EyeColor" />
+      <xsd:element ref="Hair" />
+      <xsd:element ref="ScarsMarksTattoos" />
+      <xsd:element ref="DateOfBirth" />
+      <xsd:element ref="PlaceOfBirth" />
+      <xsd:element ref="Ethnicity" />
+      <xsd:element ref="Citizenship" />
+      <xsd:element ref="MaritalStatus" />
+      <xsd:element ref="Religion" />
+      <xsd:element ref="ViolencePotential" />
+      <xsd:element ref="Occupation" />
+      <xsd:element ref="MetricHeight" />
+      <xsd:element ref="StandardHeight" />
+      <xsd:element ref="MetricWeight" />
+      <xsd:element ref="StandardWeight" />
+      <xsd:element ref="BloodType" />
+      <xsd:element ref="MedicalCondition" />
+      <xsd:element ref="DNALocus" />
+      <xsd:element ref="OtherCharacteristic" />
+      <xsd:element ref="OtherCharacteristicDescription" />
+      <xsd:element ref="Identifier" />
+      <xsd:element ref="SocialSecurityNumber" />
+      <xsd:element ref="DriversLicense" />
+      <xsd:element ref="DriversLicenseNumber" />
+      <xsd:element ref="DriversLicenseState" />
+      <xsd:element ref="DriversLicenseType" />
+      <xsd:element ref="DriversLicenseExpirationDate" />
+      <xsd:element ref="StateIdentificationNumber" />
+      <xsd:element ref="OTN" />
+      <xsd:element ref="PassportNumber" />
+      <xsd:element ref="FBINumber" />
+      <xsd:element ref="ImmigrationNumber" />
+      <xsd:element ref="CorrectionalIdentificationNumber" />
+      <xsd:element ref="MilitaryIdentification" />
+      <xsd:element ref="MilitarySerialNumber" />
+      <xsd:element ref="MilitaryBranch" />
+      <xsd:element ref="OtherIdentification" />
+      <xsd:element ref="OtherIdentificationDescription" />
+    </xsd:choice>
+  </xsd:group>
+</xsd:schema>

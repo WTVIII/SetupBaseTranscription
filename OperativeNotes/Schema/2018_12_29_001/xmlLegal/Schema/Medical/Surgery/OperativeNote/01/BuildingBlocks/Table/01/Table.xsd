@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Table/01/" xmlns:Object="http://www.xmllegal.org/Schema/BuildingBlocks/Object/01/" xmlns:Paragraph="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Paragraph/01/" xmlns:Outline="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Outline/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" xmlns:Inline="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Inline/01/" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Table/01/" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update>
+						<lml:Description>Added Structured Copyright and Update History</lml:Description>
+						<lml:Date>2003-02-18</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:CopiedFrom>http://www.xmllegal.org/Schema/BuildingBlocks/Table/01/</lml:CopiedFrom>
+						<lml:Description>Copied.</lml:Description>
+						<lml:Date>2009-04-11</lml:Date>
+						<lml:Editor>
+            </lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Inline/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Inline/01/Inline.xsd"/>
+	<!--<xsd:import namespace="http://www.xmllegal.org/Schema/BuildingBlocks/Object/01/" schemaLocation="../../Object/01/Object.xsd"/>-->
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Paragraph/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Paragraph/01/Paragraph.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Outline/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Outline/01/Outline.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:complexType name="Table">
+		<xsd:sequence>
+			<xsd:element name="TableHeader" type="TableHeader" minOccurs="0"/>
+			<xsd:element name="TableRow" type="TableRow" maxOccurs="unbounded"/>
+			<xsd:element name="TableFooter" type="TableFooter" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Table"/>
+	</xsd:complexType>
+	<xsd:complexType name="TableFooter" mixed="true">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:group ref="Inline:InlineHeadings"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="TableHeader" mixed="true">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:group ref="Inline:InlineHeadings"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="TableRow">
+		<xsd:sequence>
+			<xsd:element ref="TableCell" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Table"/>
+	</xsd:complexType>
+	<xsd:complexType name="TableCell" mixed="true">
+		<xsd:choice>
+			<xsd:group ref="Inline:Inline"/>
+			<!--<xsd:element ref="Object:Object"/>-->
+			<xsd:element ref="Paragraph:Paragraph"/>
+			<xsd:element ref="Table"/>
+			<xsd:element ref="Outline:Outline"/>
+		</xsd:choice>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+		<xsd:attributeGroup ref="Attributes:Table"/>
+	</xsd:complexType>
+	<xsd:element name="Table" type="Table"/>
+	<xsd:element name="TableHeader" type="TableHeader"/>
+	<xsd:element name="TableRow" type="TableRow"/>
+	<xsd:element name="TableCell" type="TableCell"/>
+	<xsd:element name="TableFooter" type="TableFooter"/>
+</xsd:schema>

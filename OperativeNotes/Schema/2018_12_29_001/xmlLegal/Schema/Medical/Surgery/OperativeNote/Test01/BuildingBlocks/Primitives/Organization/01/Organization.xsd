@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Organization/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Organization/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Email="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Email/01/" xmlns:Phone="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Phone/01/" xmlns:Address="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Address/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" xmlns:Person="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Person/01/" elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact Winchel "Todd" Vincent III (winchel@mindspring.com) or xmlLegal Help (help@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update>
+            <lml:Description> Added copyright and upldate history.  Corrected Primatives misspelling.  Deleted commented out portions of schema.  Put comments in for Hospital and Fire Department, which were in Todd's schema as an experiment.</lml:Description>
+            <lml:Date>2002-09-14</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Added Structured Copyright and Update History</lml:Description>
+            <lml:Date>2003-02-18</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Changed relative path for imported schema to add 'Schema'.</lml:Description>
+            <lml:Date>2003-02-23</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/BuildingBlocks/Primitives/Organization/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2009-03-28</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd" />
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Address/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Address/01/Address.xsd" />
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Phone/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Phone/01/Phone.xsd" />
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Email/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Email/01/Email.xsd" />
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Person/01/" schemaLocation="../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Primitives/Person/01/Person.xsd" />
+  <xsd:complexType name="Organization" mixed="true">
+    <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+      <xsd:element ref="Name" minOccurs="0" />
+      <xsd:element ref="ContactPerson" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element ref="Addresses" minOccurs="0" />
+      <xsd:element ref="Phones" minOccurs="0" />
+      <xsd:element ref="Emails" minOccurs="0" />
+      <xsd:element ref="Identifiers" minOccurs="0" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <!-- =============================  -->
+  <!--         Organization Complex Types        -->
+  <!-- =============================  -->
+  <xsd:complexType name="ContactPerson">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Addresses">
+    <xsd:sequence maxOccurs="unbounded">
+      <xsd:element ref="Address:Address" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+    <xsd:attribute name="Container" use="optional" default="Container" />
+  </xsd:complexType>
+  <xsd:complexType name="Phones">
+    <xsd:sequence maxOccurs="unbounded">
+      <xsd:element ref="Phone:Phone" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+    <xsd:attribute name="Container" use="optional" default="Container" />
+  </xsd:complexType>
+  <xsd:complexType name="Emails">
+    <xsd:sequence maxOccurs="unbounded">
+      <xsd:element ref="Email:Email" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+    <xsd:attribute name="Container" use="optional" default="Container" />
+  </xsd:complexType>
+  <xsd:complexType name="Identifiers">
+    <xsd:sequence maxOccurs="unbounded">
+      <xsd:element ref="Identifier" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="Name" mixed="true">
+    <xsd:all>
+      <xsd:element ref="FullName" minOccurs="0" />
+      <xsd:element ref="AbbreviatedName" minOccurs="0" />
+      <xsd:element ref="Acronym" minOccurs="0" />
+    </xsd:all>
+    <xsd:attributeGroup ref="Attributes:Global" />
+    <xsd:attribute name="OrganizationType" type="xsd:string" />
+  </xsd:complexType>
+  <xsd:complexType name="FullName">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="AbbreviatedName">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Acronym">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!-- ========================  -->
+  <!--         Identifier Complex Types      -->
+  <!-- ========================  -->
+  <xsd:complexType name="Identifier">
+    <xsd:choice maxOccurs="unbounded">
+      <xsd:element ref="ORI" minOccurs="0" />
+      <xsd:element ref="FederalTaxID" minOccurs="0" />
+      <xsd:element ref="StateTaxID" minOccurs="0" />
+      <xsd:element ref="StateIdentification" minOccurs="0" />
+      <xsd:element ref="OtherIdentification" minOccurs="0" />
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="ORI">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="FederalTaxID">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="StateTaxID">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="StateIdentification">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="OtherIdentification">
+    <xsd:sequence>
+      <xsd:element name="Name" />
+      <xsd:element name="Value" />
+      <xsd:element name="OtherIdentificationDescription" minOccurs="0" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="OtherIdentificationDescription">
+    <xsd:simpleContent>
+      <xsd:extension base="Memo">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="Memo">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <!-- ========================  -->
+  <!--         Organization Elements         -->
+  <!-- ========================  -->
+  <xsd:element name="Organization" type="Organization" />
+  <xsd:element name="ContactPerson" type="ContactPerson" />
+  <xsd:element name="Addresses" type="Addresses" />
+  <xsd:element name="Phones" type="Phones" />
+  <xsd:element name="Emails" type="Emails" />
+  <xsd:element name="Identifiers" type="Identifiers" />
+  <xsd:element name="Name" type="Name" />
+  <xsd:element name="FullName" type="FullName" />
+  <xsd:element name="AbbreviatedName" type="AbbreviatedName" />
+  <xsd:element name="Acronym" type="Acronym" />
+  <xsd:element name="Identifier" type="Identifier" />
+  <xsd:element name="ORI" type="ORI" />
+  <xsd:element name="FederalTaxID" type="FederalTaxID" />
+  <xsd:element name="StateTaxID" type="StateTaxID" />
+  <xsd:element name="StateIdentification" type="StateIdentification" />
+  <xsd:element name="OtherIdentification" type="OtherIdentification" />
+  <xsd:element name="Court" type="Organization" />
+  <xsd:element name="DepartmentOfCorrections" type="Organization" />
+  <xsd:element name="FireDepartment" type="Organization" />
+  <xsd:element name="Hospital" type="Organization" />
+  <xsd:element name="MentalInstitution" type="Organization" />
+  <xsd:element name="PoliceDepartment" type="Organization" />
+  <xsd:element name="SheriffDepartment" type="Organization" />
+  <!-- 	<xsd:element name="Charity" type="Organization"/>
+	<xsd:element name="Corporation" type="Organization"/>
+	<xsd:element name="LimitedLiabilityCompany" type="Organization"/>
+	-->
+  <!-- ========================  -->
+  <!--         Vocabulary                             -->
+  <!-- ========================  -->
+  <xsd:group name="Vocabulary">
+    <xsd:choice>
+      <xsd:element ref="Organization" minOccurs="0" />
+      <xsd:element ref="ContactPerson" />
+      <xsd:element ref="Name" />
+      <xsd:element ref="FullName" />
+      <xsd:element ref="AbbreviatedName" />
+      <xsd:element ref="Acronym" />
+      <xsd:element ref="Identifier" />
+      <xsd:element ref="Court" />
+      <xsd:element ref="DepartmentOfCorrections" />
+      <xsd:element ref="FireDepartment" />
+      <xsd:element ref="Hospital" />
+      <xsd:element ref="MentalInstitution" />
+      <xsd:element ref="PoliceDepartment" />
+      <xsd:element ref="SheriffDepartment" />
+    </xsd:choice>
+  </xsd:group>
+</xsd:schema>

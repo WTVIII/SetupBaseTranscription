@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/Audio/RR/01/Query/01/" version="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/Audio/RR/01/Query/01/" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:lml="http://www.xmllegal.org/Schema/xmllegal/SchemaDescriptions/01/" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/Audio/RR/01/Query/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" xmlns:Seed="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/Audio/RR/01/Query/01/Seed/01/">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <lml:SchemaDescription>
+        <lml:Copyright>
+          <lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+          <lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+          <lml:Line>Contact xmlLegal Help (help@xmllegal.org)  or  Winchel "Todd" VincentIII (Todd.Vincent@xmllegal.org) for more information.</lml:Line>
+        </lml:Copyright>
+        <lml:Updates>
+          <lml:Update>
+            <lml:Description>Normalized using xmlLegal Normalizer 0.1.1. Deleted Annotations and Update History. Copied to Zip File.</lml:Description>
+            <lml:Date>2006-06-29</lml:Date>
+            <lml:Editor>Winchel Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:CopiedFrom>http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/RR/01/Query/01/</lml:CopiedFrom>
+            <lml:Description>Copied.</lml:Description>
+            <lml:Date>2018-02-14</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Harmonized with updated Query.xsd schemas.</lml:Description>
+            <lml:Date>2018-02-18</lml:Date>
+            <lml:Editor>Todd Vincent</lml:Editor>
+          </lml:Update>
+          <lml:Update>
+            <lml:Description>Normalized using xmlSchemaGenerator Normalizer 0.1.7.</lml:Description>
+            <lml:Date>2018-02-18</lml:Date>
+            <lml:Editor>Schema Generator</lml:Editor>
+          </lml:Update>
+        </lml:Updates>
+      </lml:SchemaDescription>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/Audio/RR/01/Query/01/Seed/01/" schemaLocation="../../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/Audio/RR/01/Query/01/Seed/01/Seed.xsd" />
+  <xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../../../../../../Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Attributes/01/Attributes.xsd" />
+  <xsd:complexType name="Query">
+    <xsd:choice>
+      <xsd:element ref="Request" />
+      <xsd:element ref="Response" />
+    </xsd:choice>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="Request">
+    <xsd:sequence>
+      <xsd:element ref="Type" />
+      <xsd:element ref="GetRecords" minOccurs="0" />
+      <xsd:element ref="Start" minOccurs="0" />
+      <xsd:element ref="Page" minOccurs="0" />
+      <xsd:element ref="BeginDate" minOccurs="0" />
+      <xsd:element ref="EndDate" minOccurs="0" />
+      <xsd:element ref="Seeds" minOccurs="0" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="Response">
+    <xsd:sequence>
+      <xsd:element ref="Type" />
+      <xsd:element ref="GetRecords" minOccurs="0" />
+      <xsd:element ref="TotalRecords" />
+      <xsd:element ref="ResultRecords" />
+      <xsd:element ref="Start" minOccurs="0" />
+      <xsd:element ref="Page" minOccurs="0" />
+      <xsd:element ref="BeginDate" minOccurs="0" />
+      <xsd:element ref="EndDate" minOccurs="0" />
+      <xsd:element ref="Seeds" minOccurs="0" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:complexType name="Type">
+    <xsd:simpleContent>
+      <xsd:extension base="QueryTypes">
+        <xsd:attribute name="Detail" type="xsd:boolean" />
+        <xsd:attribute name="XML" type="XMLTypes" />
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="GetRecords">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:positiveInteger">
+        <xsd:attribute name="All" type="xsd:boolean" />
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="TotalRecords">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:integer">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ResultRecords">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:integer">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Start">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:positiveInteger">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Page">
+    <xsd:simpleContent>
+      <xsd:extension base="PageTypes">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="BeginDate">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:date">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="EndDate">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:date">
+        <xsd:attributeGroup ref="Attributes:Global" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="Seeds">
+    <xsd:sequence>
+      <xsd:element ref="Seed" maxOccurs="unbounded" />
+    </xsd:sequence>
+    <xsd:attributeGroup ref="Attributes:Global" />
+  </xsd:complexType>
+  <xsd:simpleType name="QueryTypes">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Investigate" />
+      <xsd:enumeration value="InvestigateVerbose" />
+      <xsd:enumeration value="Execute" />
+      <xsd:enumeration value="ExecuteVerbose" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="PageTypes">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Forward" />
+      <xsd:enumeration value="Backward" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="XMLTypes">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Complex" />
+      <xsd:enumeration value="Simple" />
+      <xsd:enumeration value="Minimal" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="Query" type="Query" />
+  <xsd:element name="Request" type="Request" />
+  <xsd:element name="Response" type="Response" />
+  <xsd:element name="Type" type="Type" />
+  <xsd:element name="GetRecords" type="GetRecords" />
+  <xsd:element name="TotalRecords" type="TotalRecords" />
+  <xsd:element name="ResultRecords" type="ResultRecords" />
+  <xsd:element name="Start" type="Start" />
+  <xsd:element name="Page" type="Page" />
+  <xsd:element name="BeginDate" type="BeginDate" />
+  <xsd:element name="EndDate" type="EndDate" />
+  <xsd:element name="Seeds" type="Seeds" />
+  <xsd:element name="Seed" type="Seed:Seed" />
+</xsd:schema>

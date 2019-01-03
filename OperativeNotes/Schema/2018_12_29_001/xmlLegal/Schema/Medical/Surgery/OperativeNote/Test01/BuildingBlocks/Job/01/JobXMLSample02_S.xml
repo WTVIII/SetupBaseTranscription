@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Job xsi:schemaLocation="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Job/01/ Job.xsd" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/Job/01/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Number>78</Number>
+  <DictatorName>David Kirn</DictatorName>
+  <DictatorID>7104</DictatorID>
+  <MedicalRecordNumber PatientID="9">MRN48999388</MedicalRecordNumber>
+  <ServiceDate>2001-12-17T09:30:47Z</ServiceDate>
+  <Priority>0</Priority>
+  <AudioFiles>
+    <AudioFile xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFiles/02/">
+      <DocumentID xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">78</DocumentID>
+      <ID xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">9_Khade_Sanket_2018_03_22_17_58_12</ID>
+      <Path xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">..\78\9_Khade_Sanket_2018_03_22_17_58_12.wav</Path>
+      <DictationDate xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">2018-03-22</DictationDate>
+      <DictationTime xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">17:58:12+05:00</DictationTime>
+      <Size Unit="Bytes" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">33</Size>
+      <Duration Unit="Seconds" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">20</Duration>
+      <File xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">9_Khade Sanket_2018_03_22_17_58_12.wav</File>
+    </AudioFile>
+    <AudioFile xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFiles/02/">
+      <DocumentID xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">78</DocumentID>
+      <ID xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">9_Khade Sanket_2018_03_22_17_58_37</ID>
+      <Path xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">..\78\9_Khade_Sanket_2018_03_22_17_58_37.wav</Path>
+      <DictationDate xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">2018-03-22</DictationDate>
+      <DictationTime xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">17:58:37+05:00</DictationTime>
+      <Size Unit="Bytes" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">43</Size>
+      <Duration Unit="Seconds" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">25</Duration>
+      <File xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/Test01/BuildingBlocks/AudioFile/02/">9_Khade_Sanket_2018_03_22_17_58_37.wav</File>
+    </AudioFile>
+  </AudioFiles>
+</Job>

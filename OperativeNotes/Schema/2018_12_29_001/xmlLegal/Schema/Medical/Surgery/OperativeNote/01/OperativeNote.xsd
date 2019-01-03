@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/" xmlns:Head="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Head/01/" xmlns:Body="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Body/01/" xmlns:Attributes="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" xmlns:SignatureBlock="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/SignatureBlock/01/" xmlns:Inline="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Inline/01/" xmlns:Organization="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Primitives/Organization/01/" targetNamespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<lml:SchemaDescription xmlns:lml="http://www.xmllegal.org/Schema/xmlLegal/SchemaDescriptions/01/">
+				<lml:Copyright>
+					<lml:Line>All Rights Reserved Except Those Granted by xmlLegal General Public License at:</lml:Line>
+					<lml:Line>http://www.xmllegal.org/Legal/GeneralPublicLicense.htm</lml:Line>
+					<lml:Line>Contact xmlLegal Help (help@xmllegal.org)  or  Winchel "Todd" VincentIII (Todd.Vincent@xmllegal.org) for more information.</lml:Line>
+				</lml:Copyright>
+				<lml:Updates>
+					<lml:Update>
+						<lml:Description>Added Structured SchemaDescription,Copyright, and Update History</lml:Description>
+						<lml:Date>2009-03-28</lml:Date>
+						<lml:Editor>Schema Generator</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:CopiedFrom>http://www.xmllegal.org/Schema/Document/01/</lml:CopiedFrom>
+						<lml:Description>Copied.</lml:Description>
+						<lml:Date>2009-03-28</lml:Date>
+						<lml:Editor>Schema Generator</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:CopiedFrom>http://www.xmllegal.org/Schema/Document/01/</lml:CopiedFrom>
+						<lml:Description>Added BillingCode</lml:Description>
+						<lml:Date>2017-11-06</lml:Date>
+						<lml:Editor>Winchel Vincent</lml:Editor>
+					</lml:Update>
+					<lml:Update>
+						<lml:CopiedFrom>http://www.xmllegal.org/Schema/Document/01/</lml:CopiedFrom>
+						<lml:Description>XON-57: Added 'Exparel' and 'Tumescent' to AnesthesiaTypes</lml:Description>
+						<lml:Date>2018-01-08</lml:Date>
+						<lml:Editor>Prabhath Pallati</lml:Editor>
+					</lml:Update>
+				</lml:Updates>
+			</lml:SchemaDescription>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/" schemaLocation="../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Attributes/01/Attributes.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Body/01/" schemaLocation="../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Body/01/Body.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Head/01/" schemaLocation="../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Head/01/Head.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/SignatureBlock/01/" schemaLocation="../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/SignatureBlock/01/SignatureBlock.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Primitives/Organization/01/" schemaLocation="../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Primitives/Organization/01/Organization.xsd"/>
+	<xsd:import namespace="http://www.xmllegal.org/Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Inline/01/" schemaLocation="../../../../../Schema/Medical/Surgery/OperativeNote/01/BuildingBlocks/Inline/01/Inline.xsd"/>
+	<xsd:complexType name="OperativeNote">
+		<xsd:sequence>
+			<xsd:element ref="Head:Head"/>
+			<xsd:element ref="Body"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<!--	<xsd:complexType name="Body">
+		<xsd:sequence>
+			<xsd:element ref="Document"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>-->
+	<xsd:complexType name="Body">
+		<xsd:sequence>
+			<xsd:element ref="Frontmatter" minOccurs="0"/>
+			<xsd:element ref="Body:Body"/>
+			<xsd:element ref="Backmatter" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<!--  Frontmatter -->
+	<xsd:complexType name="Frontmatter">
+		<xsd:sequence>
+			<xsd:element ref="Caption"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Caption" mixed="true">
+		<xsd:sequence>
+			<xsd:element ref="DocumentHeader"/>
+			<xsd:element ref="DocumentTitle"/>
+			<xsd:element ref="ColumnOne"/>
+			<xsd:element ref="ColumnTwo"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentHeader" mixed="true">
+		<xsd:sequence>
+			<xsd:element ref="Organization:Organization"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentTitle" mixed="true">
+		<xsd:sequence>
+			<xsd:element ref="Title"/>
+			<xsd:element ref="Header" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="Title">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Header" mixed="true">
+		<xsd:sequence>
+			<xsd:group ref="Inline:Inline" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="ColumnOne" mixed="true">
+		<xsd:sequence>
+			<xsd:group ref="Inline:Inline" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="ColumnTwo" mixed="true">
+		<xsd:sequence>
+			<xsd:group ref="Inline:Inline" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:complexType name="MedicalRecordNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Date">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:date">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Physician">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PreOperativeDiagnosis">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PostOperativeDiagnosis">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Procedure">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Anesthesia">
+		<xsd:simpleContent>
+			<xsd:extension base="AnesthesiaTypes">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="AnesthesiaTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Exparel"/>
+			<xsd:enumeration value="General"/>
+			<xsd:enumeration value="General and Local"/>
+			<xsd:enumeration value="Local-MAC"/>
+			<xsd:enumeration value="Local"/>
+			<xsd:enumeration value="Topical Intranasal Afrin"/>
+			<xsd:enumeration value="Tumescent"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="EBL">
+		<xsd:simpleContent>
+			<xsd:extension base="EBLTypes">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="EBLTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="Minimal"/>
+			<xsd:enumeration value="&lt; 20 mL"/>
+			<xsd:enumeration value="&lt; 50 mL"/>
+			<xsd:enumeration value="&lt; 100 mL"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="Complications">
+		<xsd:simpleContent>
+			<xsd:extension base="ComplicationsTypes">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="ComplicationsTypes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="None"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="Category">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SerialNumber">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="FillVolume">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="BillingCode">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attributeGroup ref="Attributes:Global"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- Backmatter  -->
+	<xsd:complexType name="Backmatter">
+		<xsd:sequence>
+			<xsd:element ref="SignatureBlock:SignatureBlock" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="Attributes:Global"/>
+	</xsd:complexType>
+	<xsd:element name="OperativeNote" type="OperativeNote"/>
+	<xsd:element name="Body" type="Body"/>
+	<!--<xsd:element name="Document" type="Document"/>-->
+	<xsd:element name="Frontmatter" type="Frontmatter"/>
+	<xsd:element name="Backmatter" type="Backmatter"/>
+	<xsd:element name="Caption" type="Caption"/>
+	<xsd:element name="DocumentHeader" type="DocumentHeader"/>
+	<xsd:element name="DocumentTitle" type="DocumentTitle"/>
+	<xsd:element name="Title" type="Title"/>
+	<xsd:element name="Header" type="Header"/>
+	<xsd:element name="ColumnOne" type="ColumnOne"/>
+	<xsd:element name="ColumnTwo" type="ColumnTwo"/>
+	<!--<xsd:element name="PatientName" type="PatientName"/>-->
+	<xsd:element name="MedicalRecordNumber" type="MedicalRecordNumber"/>
+	<xsd:element name="Date" type="Date"/>
+	<xsd:element name="Physician" type="Physician"/>
+	<xsd:element name="PreOperativeDiagnosis" type="PreOperativeDiagnosis"/>
+	<xsd:element name="PostOperativeDiagnosis" type="PostOperativeDiagnosis"/>
+	<xsd:element name="Procedure" type="Procedure"/>
+	<!--<xsd:element name="Provider" type="Provider"/>-->
+	<xsd:element name="Anesthesia" type="Anesthesia"/>
+	<xsd:element name="EBL" type="EBL"/>
+	<xsd:element name="Complications" type="Complications"/>
+	<xsd:element name="Category" type="Category"/>
+	<xsd:element name="SerialNumber" type="SerialNumber"/>
+	<xsd:element name="FillVolume" type="FillVolume"/>
+	<xsd:element name="BillingCode" type="BillingCode"/>
+	<xsd:group name="Vocabulary">
+		<xsd:choice>
+			<!--<xsd:element ref="PatientName"/>-->
+			<xsd:element ref="MedicalRecordNumber"/>
+			<xsd:element ref="Date"/>
+			<xsd:element ref="Physician"/>
+			<xsd:element ref="PreOperativeDiagnosis"/>
+			<xsd:element ref="PostOperativeDiagnosis"/>
+			<xsd:element ref="Procedure"/>
+			<!--<xsd:element ref="Provider"/>-->
+			<xsd:element ref="Anesthesia"/>
+			<xsd:element ref="EBL"/>
+			<xsd:element ref="Complications"/>
+			<xsd:element ref="Category"/>
+			<xsd:element ref="SerialNumber"/>
+			<xsd:element ref="FillVolume"/>
+			<xsd:element ref="BillingCode"/>
+		</xsd:choice>
+	</xsd:group>
+</xsd:schema>
